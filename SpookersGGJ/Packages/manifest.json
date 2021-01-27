@@ -15,6 +15,7 @@
     "com.unity.progrids": "3.0.3-preview.6",
     "com.unity.recorder": "2.5.2",
     "com.unity.render-pipelines.high-definition": "7.5.2",
+    "com.unity.render-pipelines.high-definition-config": "file:../LocalPackages/com.unity.render-pipelines.high-definition-config",
     "com.unity.test-framework": "1.1.20",
     "com.unity.textmeshpro": "2.1.1",
     "com.unity.timeline": "1.2.17",
