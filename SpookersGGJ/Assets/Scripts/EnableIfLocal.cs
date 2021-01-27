@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
+//szsahaj www.embracingearth.space
 public class EnableIfLocal : NetworkBehaviour
 {
     public GameObject[] toenable;
@@ -13,7 +14,7 @@ public class EnableIfLocal : NetworkBehaviour
             toenable[i].SetActive(false);
             if (isLocalPlayer || hasAuthority)
             {
-                toenable[i].SetActive(true);
+                 toenable[i].SetActive(true);
             }
         }
     }

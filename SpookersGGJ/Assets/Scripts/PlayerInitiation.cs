@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
-
+/// <summary>
+/// Change color of local player.
+/// Enable Components only on LocalPlayer
+/// Ser name to Local
+/// </summary>
+//szsahaj www.embracingearth.space
 public class PlayerInitiation : NetworkBehaviour
 {
     public MeshRenderer[] meshrenderes;
@@ -24,13 +29,11 @@ public class PlayerInitiation : NetworkBehaviour
             meshrenderes[i].material.color = Color.white;
         }
 
-        //Change Name to Local to access easily
+        //Change Name to Local to access easily  
         this.gameObject.name = ("Local");
 
     }
 
-    
-    //awake is called before start
     private void Start()
     {
         for (int i = 0; i < ComponentstoEnable.Length; i++)
