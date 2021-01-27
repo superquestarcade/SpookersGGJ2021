@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class MouseLook : MonoBehaviour
+public class MouseLook : NetworkBehaviour
 {
 
     public bool invertYaxis = true;

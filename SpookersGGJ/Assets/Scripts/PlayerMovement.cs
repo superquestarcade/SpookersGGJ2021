@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : NetworkBehaviour {
 
     public float speed = 10.0f;
     private float translation;
@@ -10,8 +11,10 @@ public class PlayerMovement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        
         // turn off the cursor
-        Cursor.lockState = CursorLockMode.Locked;		
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 	
     // Update is called once per frame
