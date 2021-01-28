@@ -8,6 +8,9 @@ public class PlayerHoldObject : MonoBehaviour
     private GameObject objectToHold;
     private bool holdingObject = false;
     
+    // Audio
+    public AudioManager audioManager;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +31,12 @@ public class PlayerHoldObject : MonoBehaviour
     {
         objectToHold = obj;
         holdingObject = true;
+        audioManager.PlayPickupItem();
     }
 
     public void Placebject()
     {
+        audioManager.PlayPutDownItem();
         holdingObject = false;
         objectToHold = null;
     }
