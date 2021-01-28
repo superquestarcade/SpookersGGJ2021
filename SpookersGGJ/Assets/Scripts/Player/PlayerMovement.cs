@@ -7,7 +7,9 @@ public class PlayerMovement : NetworkBehaviour {
 
     public float speed = 10.0f;
     public bool slowWalk = false;
-    private float _velocity;
+    [SerializeField] private float _velocity;
+
+    public float Forward => _velocity; 
     
     private float strafe;
     public float Strafe => strafe;

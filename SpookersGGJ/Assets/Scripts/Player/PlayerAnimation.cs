@@ -22,7 +22,8 @@ public class PlayerAnimation : NetworkBehaviour
         {
             anim.SetFloat("speed", Mathf.Abs(playerMovement.Velocity()*10));
             anim.SetFloat("strafe", playerMovement.Strafe*15);
-            
+            anim.SetBool("Forward", (playerMovement.Forward > -0.001f));
+
         }
         
     }

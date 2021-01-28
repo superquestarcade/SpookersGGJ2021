@@ -19,6 +19,8 @@ public class PlayerInitialize : NetworkBehaviour
 
     public bool invertMouse = true;
 
+    public float playerSpeed = 1f;
+
     public Material playerSkinMaterial;
     
     // Start is called before the first frame update
@@ -27,6 +29,8 @@ public class PlayerInitialize : NetworkBehaviour
         if (!hasAuthority) return;
 
         playerMovement = this.gameObject.AddComponent<PlayerMovement>();
+        playerMovement.speed = playerSpeed;
+        
         playerAnimation = this.GetComponentInChildren<PlayerAnimation>();
 
         playerAnimation.playerMovement = playerMovement;
