@@ -320,12 +320,14 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 7994780617417058849, guid: 70d7c044a19262c47930b70df46077f7,
+  playerPrefab: {fileID: 3223303870204835912, guid: 0b53d90ba76d3d94e9e1fdce50a0307f,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs:
   - {fileID: 1139254171913846, guid: 52f1c9ea06cfd154cb68ff9d1b66fc13, type: 3}
+  - {fileID: 8999495296954127410, guid: 9f78d2f4ac11ca24f9b39215210a8520, type: 3}
+  - {fileID: 7132921988023704018, guid: 70d7c044a19262c47930b70df46077f7, type: 3}
   showRoomGUI: 1
   minPlayers: 1
   roomPlayerPrefab: {fileID: 114033720796874720, guid: deae2134a1d77704b9c595efe69767dd,
