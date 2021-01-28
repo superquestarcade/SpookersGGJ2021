@@ -337,6 +337,7 @@ MonoBehaviour:
   clientIndex: 0
   rewardPrefab: {fileID: 1139254171913846, guid: 52f1c9ea06cfd154cb68ff9d1b66fc13,
     type: 3}
+  teamID: 0
 --- !u!114 &288184384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +379,7 @@ GameObject:
   - component: {fileID: 362631991}
   - component: {fileID: 362631990}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: NetWorkLinker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2458,7 +2459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42685d4dcb36acf4b8672a9d473056c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 362631990}
+  networkLinker: {fileID: 0}
   menuCam: {fileID: 1262309730}
   mainMenu: {fileID: 7083987221230236046}
   landingPage: {fileID: 7083987220207402356}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class GameManager : MonoBehaviour
+public class NetworkLinker : MonoBehaviour
 {
     public NetworkManager netManager;
     private string playerName;

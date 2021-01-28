@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public GameManager gameManager;
+    public NetworkLinker networkLinker;
 
     public Camera menuCam;
     
@@ -41,16 +41,16 @@ public class UIManager : MonoBehaviour
 
     public void ButtonEnterName()
     {
-        gameManager.SetPlayerName(playerNameField.text);
+        networkLinker.SetPlayerName(playerNameField.text);
         nameInput.SetActive(false);
         enterIpAddress.SetActive(true);
     }
 
     public void ButtonEnterIpAddress()
     {
-        gameManager.SetConnectionIP(connectionAddressField.text);
-        
-        gameManager.Connect(connect);
+        networkLinker.SetConnectionIP(connectionAddressField.text);
+
+        networkLinker.Connect(connect);
         menuCam.gameObject.SetActive(false);
         mainMenu.SetActive(false);
     }
