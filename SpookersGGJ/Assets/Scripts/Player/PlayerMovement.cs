@@ -16,12 +16,15 @@ public class PlayerMovement : NetworkBehaviour {
 
     private PlayerAnimation playerAnimation;
 
+    private PlayerHoldObject playerHoldObject;
+
     // Use this for initialization
     void Start () {
         
         // turn off the cursor
         Cursor.lockState = CursorLockMode.Locked;
         playerAnimation = GetComponent<PlayerAnimation>();
+        playerHoldObject = GetComponent<PlayerHoldObject>();
     }
 	
     // Update is called once per frame
@@ -67,6 +70,8 @@ public class PlayerMovement : NetworkBehaviour {
     private void PlaceObject(bool standing = false)
     {
         if(playerAnimation != null) playerAnimation.SetPlayerAnim(standing?AnimState.PLACESTANDING:AnimState.PLACECROUCH);
+        
+        playerHoldObject.Placebject();
     }
 
     private void LookBehind()

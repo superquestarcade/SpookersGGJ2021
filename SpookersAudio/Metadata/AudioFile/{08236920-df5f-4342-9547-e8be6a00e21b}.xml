@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{08236920-df5f-4342-9547-e8be6a00e21b}">
+		<property name="assetPath">
+			<value>SpookyGameJamAUDIOSFX/Various_UI_DDM13.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.2057823129251699</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{27fdbabf-058e-4bf8-842a-d3836c95b753}</destination>
+		</relationship>
+	</object>
+</objects>
