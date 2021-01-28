@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8508808042919896285}
   - component: {fileID: 2117717379482381109}
+  - component: {fileID: 5881823534527228433}
   - component: {fileID: 8508808042919896274}
   - component: {fileID: 8508808042919896278}
   - component: {fileID: 8508808042919896273}
@@ -55,6 +56,22 @@ MonoBehaviour:
   playerObj: {fileID: 8508808043190818008}
   invertMouse: 1
   playerSkinMaterial: {fileID: 2100000, guid: 4dc1532ace109844a90686de4be36bf2, type: 2}
+--- !u!114 &5881823534527228433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8508808042919896284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b29681fcdc13ac847aec296c127d53a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  anim: {fileID: 812123301}
+  playerMovement: {fileID: 0}
 --- !u!54 &8508808042919896274
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,6 +156,7 @@ GameObject:
   - component: {fileID: 8508808043190818012}
   - component: {fileID: 8508808043190818015}
   - component: {fileID: 8508808043190818014}
+  - component: {fileID: 812123301}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -221,3 +239,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &812123301
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8508808043190818008}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c525354428ff5546a5df0e76d942f11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

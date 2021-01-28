@@ -10,6 +10,7 @@ public class PlayerInitialize : NetworkBehaviour
     
     private GameObject playerCamObj;
     private PlayerMovement playerMovement;
+    private PlayerAnimation playerAnimation;
     private MouseLook mouseLook;
 
     /// <summary>
@@ -26,6 +27,9 @@ public class PlayerInitialize : NetworkBehaviour
         if (!hasAuthority) return;
 
         playerMovement = this.gameObject.AddComponent<PlayerMovement>();
+        playerAnimation = this.GetComponentInChildren<PlayerAnimation>();
+
+        playerAnimation.playerMovement = playerMovement;
         
         playerCamObj = Instantiate(playerCameraPrefab, this.gameObject.transform);
 
