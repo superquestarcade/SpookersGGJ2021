@@ -3,9 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
-
-namespace Mirror
-{
+using Mirror;
     /// <summary>
     /// This is a specialized NetworkManager that includes a networked room.
     /// </summary>
@@ -19,6 +17,7 @@ namespace Mirror
     public class NetworkRoomManager : NetworkManager
     {
         static readonly ILogger logger = LogFactory.GetLogger(typeof(NetworkRoomManager));
+
 
         public struct PendingPlayer
         {
@@ -188,6 +187,9 @@ namespace Mirror
                 gamePlayer = startPos != null
                     ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
                     : Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+
+                
+
             }
 
             if (!OnRoomServerSceneLoadedForPlayer(conn, roomPlayer, gamePlayer))
@@ -694,4 +696,4 @@ namespace Mirror
 
         #endregion
     }
-}
+

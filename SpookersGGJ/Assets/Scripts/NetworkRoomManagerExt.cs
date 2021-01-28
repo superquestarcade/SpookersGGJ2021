@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-namespace Mirror.Examples.NetworkRoom
-{
+using Mirror;
     [AddComponentMenu("")]
     public class NetworkRoomManagerExt : NetworkRoomManager
     {
@@ -10,31 +8,95 @@ namespace Mirror.Examples.NetworkRoom
         [Tooltip("Reward Prefab for the Spawner")]
         public GameObject rewardPrefab;
 
-        /// <summary>
-        /// This is called on the server when a networked scene finishes loading.
-        /// </summary>
-        /// <param name="sceneName">Name of the new scene.</param>
-        public override void OnRoomServerSceneChanged(string sceneName)
+        [Range(0, 1)]
+        public int teamID;
+
+    /// <summary>
+    /// This is called on the server when a networked scene finishes loading.
+    /// </summary>
+    /// <param name="sceneName">Name of the new scene.</param>
+    public override void OnRoomServerSceneChanged(string sceneName)
         {
             // spawn the initial batch of Rewards
             if (sceneName == GameplayScene)
             {
-                Spawner.InitialSpawn();
+               // Spawner.InitialSpawn();
             }
         }
 
-        /// <summary>
-        /// Called just after GamePlayer object is instantiated and just before it replaces RoomPlayer object.
-        /// This is the ideal point to pass any data like player name, credentials, tokens, colors, etc.
-        /// into the GamePlayer object as it is about to enter the Online scene.
-        /// </summary>
-        /// <param name="roomPlayer"></param>
-        /// <param name="gamePlayer"></param>
-        /// <returns>true unless some code in here decides it needs to abort the replacement</returns>
-        public override bool OnRoomServerSceneLoadedForPlayer(NetworkConnection conn, GameObject roomPlayer, GameObject gamePlayer)
+
+    /// <summary>
+    /// Called on the server when a client is ready.
+    /// <para>The default implementation of this function calls NetworkServer.SetClientReady() to continue the network setup process.</para>
+    /// </summary>
+    public virtual void OnRoomClientEnter() {
+        if(teamID == 0)
         {
-            PlayerScore playerScore = gamePlayer.GetComponent<PlayerScore>();
-            playerScore.index = roomPlayer.GetComponent<NetworkRoomPlayer>().index;
+            teamID = 1;
+        }
+        else
+        {
+            teamID = 0;
+        }
+
+        foreach (NetworkRoomPlayer player in roomSlots)
+            if (player != null)
+            {
+                player.GetComponent<player_properties>().teamID = teamID;
+                if (teamID == 0)
+                {
+                    teamID = 1;
+                }
+                else
+                {
+                    teamID = 0;
+                }
+            }
+    }
+
+    /// <summary>
+    /// This is a hook to allow custom behaviour when the game client exits the room.
+    /// </summary>
+    public virtual void OnRoomClientExit() {
+        if (teamID == 0)
+        {
+            teamID = 1;
+        }
+        else
+        {
+            teamID = 0;
+        }
+
+
+        foreach (NetworkRoomPlayer player in roomSlots)
+            if (player != null)
+            {
+                player.GetComponent<player_properties>().teamID = teamID;
+                if (teamID == 0)
+                {
+                    teamID = 1;
+                }
+                else
+                {
+                    teamID = 0;
+                }
+            }
+    }
+
+
+
+    /// <summary>
+    /// Called just after GamePlayer object is instantiated and just before it replaces RoomPlayer object.
+    /// This is the ideal point to pass any data like player name, credentials, tokens, colors, etc.
+    /// into the GamePlayer object as it is about to enter the Online scene.
+    /// </summary>
+    /// <param name="roomPlayer"></param>
+    /// <param name="gamePlayer"></param>
+    /// <returns>true unless some code in here decides it needs to abort the replacement</returns>
+    public override bool OnRoomServerSceneLoadedForPlayer(NetworkConnection conn, GameObject roomPlayer, GameObject gamePlayer)
+        {
+            player_properties playerProp = gamePlayer.GetComponent<player_properties>();
+            playerProp.teamID = roomPlayer.GetComponent<player_properties>().teamID;
             return true;
         }
 
@@ -92,4 +154,4 @@ namespace Mirror.Examples.NetworkRoom
             }
         }
     }
-}
+
