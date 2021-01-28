@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public GameObject[] Players;
+    GameObject[] Players;
     void SkinSwitchandSpawn()
     {
         Players = GameObject.FindGameObjectsWithTag("GamePlayer");
