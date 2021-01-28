@@ -53,7 +53,7 @@
 			<destination>{1757a3ff-0978-4783-8950-1d290af71766}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{0282a67a-0c1d-4bcf-a3bf-35156ccfd4ff}</destination>
+			<destination>{975c3f75-7040-4b1d-bdd7-1e691515a815}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{994d3ce0-cc4c-435f-8d6b-433765e574d0}" />
@@ -107,7 +107,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{c4356429-ae0b-4d94-bfb5-31c68e1308dc}">
 		<property name="name">
-			<value>Audio 1</value>
+			<value>Footstep_Wood</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{53a2bdd3-5f74-4778-8ca8-ad773bc0cedf}</destination>
