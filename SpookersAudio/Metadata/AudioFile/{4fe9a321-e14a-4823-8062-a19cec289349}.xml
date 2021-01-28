@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{4fe9a321-e14a-4823-8062-a19cec289349}">
+		<property name="assetPath">
+			<value>SpookyGameJamAUDIOSFX/UI_Mechanical_Move_40.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.26561458333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{27fdbabf-058e-4bf8-842a-d3836c95b753}</destination>
+		</relationship>
+	</object>
+</objects>

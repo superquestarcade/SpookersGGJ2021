@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerGroup" id="{0100ee38-1b55-4837-a039-c07cf3a7768e}">
+		<property name="name">
+			<value>G_Footstep</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{d047ace5-50bf-4689-ab6d-d2a116042e0b}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{f3fb6e1c-d1cb-4de3-8b58-9897d4749ed0}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{268682c8-7d71-49b6-9137-4754d2945c6c}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{d047ace5-50bf-4689-ab6d-d2a116042e0b}">
+		<relationship name="effects">
+			<destination>{ba238ee0-749a-46dc-a354-1809358c49ba}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{f3fb6e1c-d1cb-4de3-8b58-9897d4749ed0}" />
+	<object class="MixerBusFader" id="{ba238ee0-749a-46dc-a354-1809358c49ba}" />
+</objects>

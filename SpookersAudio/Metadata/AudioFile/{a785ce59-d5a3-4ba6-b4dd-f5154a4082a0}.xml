@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{a785ce59-d5a3-4ba6-b4dd-f5154a4082a0}">
+		<property name="assetPath">
+			<value>SpookyGameJamAUDIOSFX/SpookyGGJMusic_LongerRun.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>14.471836734693877</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{27fdbabf-058e-4bf8-842a-d3836c95b753}</destination>
+		</relationship>
+	</object>
+</objects>
