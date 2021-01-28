@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnHalfTime;
     void Start()
     {
-        RunGame();
+        StartCoroutine(RunGame());
     }
 
     IEnumerator RunGame()

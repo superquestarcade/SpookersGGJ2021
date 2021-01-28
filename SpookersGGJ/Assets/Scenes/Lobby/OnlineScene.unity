@@ -386,7 +386,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c969563ce2424dc4d8e0d5abf4e00eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HalfTimeAfterSeconds: 30
+  HalfTimeAfterSeconds: 2
+  OnHalfTime:
+    m_PersistentCalls:
+      m_Calls: []
+  Players: []
 --- !u!1 &720887858
 GameObject:
   m_ObjectHideFlags: 0
