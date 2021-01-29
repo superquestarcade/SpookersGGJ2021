@@ -68,6 +68,8 @@ MonoBehaviour:
     type: 3}
   HumanSkin: {fileID: 7132921988023704018, guid: 70d7c044a19262c47930b70df46077f7,
     type: 3}
+  Team_A_TransFormPoint: {x: 2, y: 0, z: 2}
+  Team_B_TransFormPoint: {x: -2, y: 0, z: -2}
 --- !u!114 &4741778589331168114
 MonoBehaviour:
   m_ObjectHideFlags: 0

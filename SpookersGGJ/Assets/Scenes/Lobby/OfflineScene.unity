@@ -347,7 +347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288184381}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
   m_Name: 
@@ -2461,7 +2461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42685d4dcb36acf4b8672a9d473056c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  networkLinker: {fileID: 0}
+  networkLinker: {fileID: 362631990}
   menuCam: {fileID: 1262309730}
   mainMenu: {fileID: 7083987221230236046}
   landingPage: {fileID: 7083987220207402356}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+//sz.sahaj@gmail.com
 
 public class SpawnSkinner : NetworkBehaviour
 {
@@ -11,16 +12,45 @@ public class SpawnSkinner : NetworkBehaviour
 
     GameObject tospawn;
     GameObject instantiatedskin;
+    //public Transform[] spawntransforms;
+    Vector3 selectedspawn;
+    bool firstround = true;
+    int index;
+
+    public Vector3 Team_A_TransFormPoint;
+    public Vector3 Team_B_TransFormPoint;
+    Quaternion rotation;
     private void Start()
     {
-        CmdSpawn();
+        CmdFirstSpawn();
+        firstround = true;
+
+        /*
+        spawntransforms = GameObject.Find("StartPositions").GetComponentsInChildren<Transform>();
+        index = Random.Range(0, spawntransforms.Length);
+        selectedspawn = spawntransforms[index].transform.position;
+        */
     }
 
     [Command]
-    void CmdSpawn()
+    void CmdFirstSpawn()
     {
-        
-        if(playerproperties.teamID == 0)
+        //selectedspawn = spawntransforms[index];
+
+        if (playerproperties.teamID == 0){
+            selectedspawn = Team_A_TransFormPoint;
+        }
+        else
+        {
+            selectedspawn = Team_B_TransFormPoint;
+        }
+
+        if (instantiatedskin != null)
+        {
+            Destroy(instantiatedskin);
+        }
+
+        if (playerproperties.teamID == 0) //switch team
         {
             tospawn = GhostSkin;
         }
@@ -29,7 +59,27 @@ public class SpawnSkinner : NetworkBehaviour
             tospawn = HumanSkin;
         }
 
-        instantiatedskin = (GameObject)Instantiate(tospawn, tospawn.transform.position, Quaternion.identity);
+        instantiatedskin = (GameObject)Instantiate(tospawn, selectedspawn, Quaternion.identity);
+        NetworkServer.Spawn(instantiatedskin, connectionToClient);
+
+    }
+
+    [Command]
+    void CmdSpawn()
+    {       
+        if (playerproperties.teamID == 0) //switch team
+        {
+            tospawn = GhostSkin;
+        }
+        else
+        {
+            tospawn = HumanSkin;
+        }
+
+        selectedspawn = instantiatedskin.transform.position;
+        rotation = instantiatedskin.transform.rotation;
+
+        instantiatedskin = (GameObject)Instantiate(tospawn, selectedspawn, rotation);
         //GameObject owner = this.gameObject;
         NetworkServer.Spawn(instantiatedskin, connectionToClient);
     }

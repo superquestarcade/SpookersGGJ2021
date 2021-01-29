@@ -94,9 +94,10 @@ using Mirror;
     /// <param name="gamePlayer"></param>
     /// <returns>true unless some code in here decides it needs to abort the replacement</returns>
     public override bool OnRoomServerSceneLoadedForPlayer(NetworkConnection conn, GameObject roomPlayer, GameObject gamePlayer)
-        {
+        {   
             player_properties playerProp = gamePlayer.GetComponent<player_properties>();
             playerProp.teamID = roomPlayer.GetComponent<player_properties>().teamID;
+            NetworkServer.Destroy(roomPlayer);
             return true;
         }
 
