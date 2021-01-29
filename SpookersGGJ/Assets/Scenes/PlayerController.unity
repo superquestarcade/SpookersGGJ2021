@@ -359,6 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 362631991}
   - component: {fileID: 362631990}
+  - component: {fileID: 362631992}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -393,6 +394,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &362631992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362631989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9da02d5f0329d94294276cdec55dd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMessages: 0
+  playerObj: {fileID: 0}
+  levelMusicEventPath: event:/music/music
+  levelAmbienceEventPath: event:/sfx/amb_level
+  countdownEventPath: event:/sfx/countdown
+  humanFootstepPath: 
+  ghostFootstepPath: 
+  pickupItemPath: 
+  putDownPath: 
+  humanFindItemPath: 
+  pingItemPath: 
+  uiButtonClickPath: 
 --- !u!1 &483837349
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +496,7 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 7132921988023704018, guid: 70d7c044a19262c47930b70df46077f7,
+  playerPrefab: {fileID: 8999495296954127410, guid: 9f78d2f4ac11ca24f9b39215210a8520,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
