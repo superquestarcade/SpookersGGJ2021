@@ -32,7 +32,11 @@
 			<destination>{38151650-e55d-4d15-a090-6885d17e90fb}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{fd439365-333a-4f86-9cbd-7d81220f3740}" />
+	<object class="EventAutomatableProperties" id="{fd439365-333a-4f86-9cbd-7d81220f3740}">
+		<relationship name="modulators">
+			<destination>{d6d18f2a-93d2-4ba7-a849-5a7559306132}</destination>
+		</relationship>
+	</object>
 	<object class="MarkerTrack" id="{8a567f77-8663-4d1b-b774-8e37da064026}" />
 	<object class="Timeline" id="{a0cef4a2-3bdc-42c9-8765-e4d572b7ca75}" />
 	<object class="SnapshotMasterTrack" id="{b60c2c1a-7be4-4199-89b0-bcbcb4e1a732}" />
@@ -41,7 +45,7 @@
 			<value>volume</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-40</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{782cbce9-4445-4a76-b5ed-583b7f54fae8}</destination>
@@ -52,7 +56,7 @@
 			<value>volume</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-40</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{e3211a18-c7d8-4c78-864d-3350eec6aa29}</destination>
@@ -63,7 +67,7 @@
 			<value>volume</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-40</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{0100ee38-1b55-4837-a039-c07cf3a7768e}</destination>
@@ -99,5 +103,16 @@
 		<relationship name="mixerStrip">
 			<destination>{01383510-fcd1-4110-b24d-699dad3142ed}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{d6d18f2a-93d2-4ba7-a849-5a7559306132}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>snapshotIntensity</value>
+		</property>
+		<property name="peakValue">
+			<value>100</value>
+		</property>
+		<property name="sustainValue">
+			<value>100</value>
+		</property>
 	</object>
 </objects>

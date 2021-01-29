@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{c1468496-d88f-4938-80c6-b9ca48fee306}">
 		<property name="name">
-			<value>G_ObjectPings</value>
+			<value>G_ObjectPing</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -28,9 +28,14 @@
 		<relationship name="groupTracks">
 			<destination>{e6a337dc-511e-40e9-b338-cb3c92d416a4}</destination>
 			<destination>{5bcf72fa-6597-48a2-9b22-94b2db2df625}</destination>
+			<destination>{a354a007-5086-499a-911c-704eeb724ed8}</destination>
+			<destination>{1992eb48-f917-4805-8887-20d36aa8d32d}</destination>
 		</relationship>
 		<relationship name="timeline">
 			<destination>{2ae59aad-e79e-40ce-beca-6d9fe05b5805}</destination>
+		</relationship>
+		<relationship name="parameters">
+			<destination>{842f2de9-2d13-4d3a-a6c8-638684e59fe7}</destination>
 		</relationship>
 		<relationship name="banks">
 			<destination>{c3a68788-06f9-46a1-93e8-7bd0c5e5afd6}</destination>
@@ -75,10 +80,35 @@
 			<destination>{82ef232e-5e2a-42d0-b0db-3955931ba4bd}</destination>
 		</relationship>
 	</object>
+	<object class="GroupTrack" id="{a354a007-5086-499a-911c-704eeb724ed8}">
+		<relationship name="modules">
+			<destination>{f2d76039-b732-4ec8-977c-f20da33e843c}</destination>
+		</relationship>
+		<relationship name="mixerGroup">
+			<destination>{4161f28a-2390-4f83-85f7-f9143d889b8d}</destination>
+		</relationship>
+	</object>
+	<object class="GroupTrack" id="{1992eb48-f917-4805-8887-20d36aa8d32d}">
+		<relationship name="modules">
+			<destination>{69228944-b5e8-4801-9a58-b7ef3cee5647}</destination>
+		</relationship>
+		<relationship name="mixerGroup">
+			<destination>{4f225d1e-8543-404b-80df-fece69b487d0}</destination>
+		</relationship>
+	</object>
 	<object class="Timeline" id="{2ae59aad-e79e-40ce-beca-6d9fe05b5805}">
 		<relationship name="modules">
 			<destination>{1b715b31-d7de-462f-b997-29dbfebc9039}</destination>
 			<destination>{12346d5b-599f-4af2-b310-5c3310431af6}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterProxy" id="{842f2de9-2d13-4d3a-a6c8-638684e59fe7}">
+		<relationship name="modules">
+			<destination>{f2d76039-b732-4ec8-977c-f20da33e843c}</destination>
+			<destination>{69228944-b5e8-4801-9a58-b7ef3cee5647}</destination>
+		</relationship>
+		<relationship name="preset">
+			<destination>{4c678d1b-6f29-4858-873d-9534b1d234b1}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{a8a45328-ee49-4f4c-b3aa-2fdaf9a6b1e3}">
@@ -154,6 +184,59 @@
 			<destination>{a8a45328-ee49-4f4c-b3aa-2fdaf9a6b1e3}</destination>
 		</relationship>
 	</object>
+	<object class="SnapshotModule" id="{f2d76039-b732-4ec8-977c-f20da33e843c}">
+		<property name="start">
+			<value>0.10000000000000001</value>
+		</property>
+		<property name="length">
+			<value>0.89999999999999991</value>
+		</property>
+		<relationship name="event">
+			<destination>{5ef43ce4-a715-4871-a156-aed06e5a891d}</destination>
+		</relationship>
+	</object>
+	<object class="EventMixerGroup" id="{4161f28a-2390-4f83-85f7-f9143d889b8d}">
+		<property name="color">
+			<value>Red</value>
+		</property>
+		<property name="name">
+			<value>SNAPSHOT</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{fa3ce37c-5a7b-4805-a1f7-0f4f22358181}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{c0bbeb7e-310b-4352-95f5-2bf7cfa51fcb}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{a8a45328-ee49-4f4c-b3aa-2fdaf9a6b1e3}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotModule" id="{69228944-b5e8-4801-9a58-b7ef3cee5647}">
+		<property name="length">
+			<value>0.099999999999999992</value>
+		</property>
+		<relationship name="event">
+			<destination>{f62e4339-086f-47c4-80e3-9d59612301ff}</destination>
+		</relationship>
+	</object>
+	<object class="EventMixerGroup" id="{4f225d1e-8543-404b-80df-fece69b487d0}">
+		<property name="color">
+			<value>Red</value>
+		</property>
+		<property name="name">
+			<value>SNAPSHOT EQINIT</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{fc56ae52-df7c-4082-8003-d208cbecb8ce}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{2a58a8eb-06ab-4e36-bb23-111ed1bfa39e}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{a8a45328-ee49-4f4c-b3aa-2fdaf9a6b1e3}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{e9599967-d47f-469c-ae2b-fef9f483da0e}">
 		<relationship name="effects">
 			<destination>{1b6c0b25-8887-4683-ba93-c73e6605bf1e}</destination>
@@ -182,6 +265,18 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{fc82f32c-ba45-4d45-a34e-bcf4dc675e6d}" />
+	<object class="MixerBusEffectChain" id="{fa3ce37c-5a7b-4805-a1f7-0f4f22358181}">
+		<relationship name="effects">
+			<destination>{a463e64e-20f6-4a4a-a561-f01d19cfd03d}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{c0bbeb7e-310b-4352-95f5-2bf7cfa51fcb}" />
+	<object class="MixerBusEffectChain" id="{fc56ae52-df7c-4082-8003-d208cbecb8ce}">
+		<relationship name="effects">
+			<destination>{2e8f35dc-b84f-4cbd-8129-21056574690a}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{2a58a8eb-06ab-4e36-bb23-111ed1bfa39e}" />
 	<object class="MixerBusFader" id="{1b6c0b25-8887-4683-ba93-c73e6605bf1e}" />
 	<object class="SpatialiserEffect" id="{5b9bdd38-42b6-460a-b317-5cc5a9ced617}" />
 	<object class="AutomationPoint" id="{2e9976ea-f3db-4d4c-9836-5131e855d779}">
@@ -205,4 +300,6 @@
 	</object>
 	<object class="MixerBusFader" id="{a564d728-a8a0-402d-a730-898b007b6e08}" />
 	<object class="MixerBusFader" id="{72336fea-1c8b-4f2a-80ab-280f8802d823}" />
+	<object class="MixerBusFader" id="{a463e64e-20f6-4a4a-a561-f01d19cfd03d}" />
+	<object class="MixerBusFader" id="{2e8f35dc-b84f-4cbd-8129-21056574690a}" />
 </objects>
