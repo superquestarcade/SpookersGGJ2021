@@ -77,9 +77,9 @@ public class SpawnSkinner : NetworkBehaviour
         }
 
         selectedspawn = instantiatedskin.transform.position;
-        rotation = instantiatedskin.transform.localRotation;
+        Vector3 newRotation = new Vector3(0, instantiatedskin.transform.localEulerAngles.y, 0);
 
-        instantiatedskin = (GameObject)Instantiate(tospawn, selectedspawn, rotation);
+        instantiatedskin = (GameObject)Instantiate(tospawn, selectedspawn, Quaternion.Euler(newRotation));
         //GameObject owner = this.gameObject;
         NetworkServer.Spawn(instantiatedskin, connectionToClient);
     }

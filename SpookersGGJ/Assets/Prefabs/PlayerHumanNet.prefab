@@ -1856,6 +1856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectHoldPoint: {fileID: 3536401792027423316}
+  audioManager: {fileID: 0}
 --- !u!54 &7132921988023704028
 Rigidbody:
   m_ObjectHideFlags: 0
