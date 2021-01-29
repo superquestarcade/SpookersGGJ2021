@@ -44,7 +44,7 @@ public class GameManager : NetworkBehaviour
 
     void GameRunner()
     {
-        if(currround < NumberOfRounds)
+        if(currround < NumberOfRounds+1)
         {
             RunRound();
         }
@@ -141,6 +141,7 @@ public class GameManager : NetworkBehaviour
     void RpcGameOver()
     {
         OnGameOver.Invoke();
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void OPdateOnclient(float oldvalue, float currRoundProgress)

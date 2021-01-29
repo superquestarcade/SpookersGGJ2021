@@ -77,7 +77,7 @@ public class SpawnSkinner : NetworkBehaviour
         }
 
         selectedspawn = instantiatedskin.transform.position;
-        rotation = instantiatedskin.transform.rotation;
+        rotation = instantiatedskin.transform.localRotation;
 
         instantiatedskin = (GameObject)Instantiate(tospawn, selectedspawn, rotation);
         //GameObject owner = this.gameObject;
