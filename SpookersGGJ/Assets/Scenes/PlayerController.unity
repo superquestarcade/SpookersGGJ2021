@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 131.1594, g: 162.49646, b: 215.04776, a: 1}
+  m_IndirectSpecularColor: {r: 131.16855, g: 162.52502, b: 215.10977, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -406,8 +406,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9da02d5f0329d94294276cdec55dd18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMessages: 0
+  playerObj: {fileID: 0}
   levelMusicEventPath: event:/music/music
   levelAmbienceEventPath: event:/sfx/amb_level
+  countdownEventPath: event:/sfx/countdown
+  humanFootstepPath: 
+  ghostFootstepPath: 
+  pickupItemPath: 
+  putDownPath: 
+  humanFindItemPath: 
+  pingItemPath: 
+  uiButtonClickPath: 
 --- !u!1 &483837349
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +496,7 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 7132921988023704018, guid: 70d7c044a19262c47930b70df46077f7,
+  playerPrefab: {fileID: 8999495296954127410, guid: 9f78d2f4ac11ca24f9b39215210a8520,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
