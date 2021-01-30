@@ -70,7 +70,7 @@ public class AudioManager : MonoBehaviour
     public void PlayPickupItem()
     {
         if(debugMessages) Debug.Log("Playing audio path: " + pickupItemPath);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Vol_PickUpObject", audioFilterState, false);
+        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Vol_PickUpObject", audioFilterState, false);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickupItem, transform, GetComponent<Rigidbody>());
         pickupItem.start();
         pickupItem.release();
