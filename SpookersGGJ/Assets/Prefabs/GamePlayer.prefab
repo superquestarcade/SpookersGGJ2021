@@ -64,12 +64,12 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   playerproperties: {fileID: 4741778589331168114}
-  GhostSkin: {fileID: 8999495296954127410, guid: 9f78d2f4ac11ca24f9b39215210a8520,
+  GhostSkin: {fileID: 8999495296954127410, guid: 4f0b3e21d16cb904b94b22b7904655ce,
     type: 3}
   HumanSkin: {fileID: 7132921988023704018, guid: 70d7c044a19262c47930b70df46077f7,
     type: 3}
   Team_A_TransFormPoint: {x: 2, y: 0, z: 2}
-  Team_B_TransFormPoint: {x: -2, y: 0, z: -2}
+  Team_B_TransFormPoint: {x: -36.2, y: 0, z: 26.8}
 --- !u!114 &4741778589331168114
 MonoBehaviour:
   m_ObjectHideFlags: 0

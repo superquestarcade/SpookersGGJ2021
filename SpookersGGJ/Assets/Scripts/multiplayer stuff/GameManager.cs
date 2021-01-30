@@ -7,6 +7,10 @@ using Mirror;
 using UnityEngine.SceneManagement;
 using TMPro;
 //sz.sahaj@embracingearth.space
+/// <summary>
+/// Runs through Rounds, Events on HalfTime, Round Complete, Game Complete etc, Switch Side Of Team In Between. 
+/// Progress Bar for Round Completeion, Client - Server Sync, Multiplayer - unity mirror.
+/// </summary>
 
 public class GameManager : NetworkBehaviour
 {
@@ -67,7 +71,7 @@ public class GameManager : NetworkBehaviour
         CmdreturntoLobby();
     }
 
-    [Command]
+   // [Command]
     void CmdreturntoLobby()
     {
         NetworkRoomManagerExt.singleton.ServerChangeScene("RoomScene");
