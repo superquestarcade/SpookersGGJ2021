@@ -409,6 +409,7 @@ MonoBehaviour:
   debugMessages: 0
   playerObj: {fileID: 0}
   levelMusicEventPath: event:/Music
+  startScreenMusicEventPath: event:/Music/SplashScreen_Music
   levelAmbienceEventPath: event:/Atmos
   countdownEventPath: event:/SFX/Clock
   humanFootstepPath: event:/SFX/Human/H_Footstep
@@ -418,6 +419,7 @@ MonoBehaviour:
   humanFindItemPath: 
   pingItemPath: event:/SFX/Ghost/G_ObjectPing
   uiButtonClickPath: event:/SFX/UI/Click
+  uiButtonHoverPath: event:/SFX/UI/Scroll
 --- !u!1 &483837349
 GameObject:
   m_ObjectHideFlags: 0

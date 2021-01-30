@@ -186,10 +186,7 @@
 	</object>
 	<object class="SnapshotModule" id="{f2d76039-b732-4ec8-977c-f20da33e843c}">
 		<property name="start">
-			<value>0.10000000000000001</value>
-		</property>
-		<property name="length">
-			<value>0.89999999999999991</value>
+			<value>1</value>
 		</property>
 		<relationship name="event">
 			<destination>{5ef43ce4-a715-4871-a156-aed06e5a891d}</destination>
@@ -213,9 +210,6 @@
 		</relationship>
 	</object>
 	<object class="SnapshotModule" id="{69228944-b5e8-4801-9a58-b7ef3cee5647}">
-		<property name="length">
-			<value>0.099999999999999992</value>
-		</property>
 		<relationship name="event">
 			<destination>{f62e4339-086f-47c4-80e3-9d59612301ff}</destination>
 		</relationship>

@@ -11,18 +11,21 @@ public class AudioManager : MonoBehaviour
     public GameObject playerObj;
     
     FMOD.Studio.EventInstance levelMusic;
-    public string levelMusicEventPath = "event:/music/music";
+    public string levelMusicEventPath = "event:/Music/InGame_Music";
+    FMOD.Studio.EventInstance startScreenMusic;
+    public string startScreenMusicEventPath = "event:/Music/SplashScreen_Music";
     
     FMOD.Studio.EventInstance levelAmb;
-    public string levelAmbienceEventPath = "event:/sfx/amb_level";
+    public string levelAmbienceEventPath = "event:/Atmos";
     
     FMOD.Studio.EventInstance countdown;
-    public string countdownEventPath = "event:/sfx/countdown";
+    public string countdownEventPath = "event:/SFX/Clock";
 
     public string humanFootstepPath = "";
     
     public string ghostFootstepPath = "";
     
+    FMOD.Studio.EventInstance pickupItem;
     public string pickupItemPath = "";
     
     public string putDownPath = "";
@@ -32,15 +35,20 @@ public class AudioManager : MonoBehaviour
     public string pingItemPath = "";
     
     public string uiButtonClickPath = "";
+    public string uiButtonHoverPath = "";
 
     // Start is called before the first frame update
     void Start()
     {
         levelMusic = FMODUnity.RuntimeManager.CreateInstance(levelMusicEventPath);
+
+        startScreenMusic = FMODUnity.RuntimeManager.CreateInstance(startScreenMusicEventPath);
         
         levelAmb = FMODUnity.RuntimeManager.CreateInstance(levelAmbienceEventPath);
         
         countdown = FMODUnity.RuntimeManager.CreateInstance(countdownEventPath);
+
+        pickupItem = FMODUnity.RuntimeManager.CreateInstance(pickupItemPath);
         
     }
     
@@ -62,7 +70,10 @@ public class AudioManager : MonoBehaviour
     public void PlayPickupItem()
     {
         if(debugMessages) Debug.Log("Playing audio path: " + pickupItemPath);
-        FMODUnity.RuntimeManager.PlayOneShotAttached(pickupItemPath, playerObj);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Vol_PickUpObject", audioFilterState, false);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickupItem, transform, GetComponent<Rigidbody>());
+        pickupItem.start();
+        pickupItem.release();
     }
 
     // Put down item
@@ -92,11 +103,21 @@ public class AudioManager : MonoBehaviour
         if(debugMessages) Debug.Log("Playing audio path: " + uiButtonClickPath);
         FMODUnity.RuntimeManager.PlayOneShotAttached(uiButtonClickPath, playerObj);
     }
+    public void PlayUiButtonHover()
+    {
+        if(debugMessages) Debug.Log("Playing audio path: " + uiButtonHoverPath);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(uiButtonHoverPath, playerObj);
+    }
 
     // Music
-    public void MusicActive(bool play = true)
+    public void LevelMusicActive(bool play = true)
     {
         if (play) levelMusic.start();
+        else levelMusic.stop(STOP_MODE.ALLOWFADEOUT);
+    }
+    public void StartScreenMusicActive(bool play = true)
+    {
+        if (play) startScreenMusic.start();
         else levelMusic.stop(STOP_MODE.ALLOWFADEOUT);
     }
     
