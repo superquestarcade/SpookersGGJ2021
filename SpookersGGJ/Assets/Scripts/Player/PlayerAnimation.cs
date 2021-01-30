@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
 
-public class PlayerAnimation : NetworkBehaviour
+public class PlayerAnimation : MonoBehaviour
 {
     public Animator anim;
     public PlayerMovement playerMovement;

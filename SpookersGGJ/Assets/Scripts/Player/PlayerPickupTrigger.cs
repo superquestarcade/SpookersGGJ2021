@@ -24,7 +24,15 @@ public class PlayerPickupTrigger : MonoBehaviour
     {
         if (other.CompareTag("Pickup"))
         {
-            playerHoldObject.PickupObject(other.gameObject);
+            playerHoldObject.ObjectInReach(other.gameObject, true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Pickup"))
+        {
+            playerHoldObject.ObjectInReach(other.gameObject, false);
         }
     }
 }

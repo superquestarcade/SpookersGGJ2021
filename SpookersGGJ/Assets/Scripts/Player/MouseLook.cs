@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
 
-public class MouseLook : NetworkBehaviour
+public class MouseLook : MonoBehaviour
 {
 
     public bool invertYaxis = true;
@@ -36,6 +35,6 @@ public class MouseLook : NetworkBehaviour
 
         // vector3.right means the x-axis
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
-        character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
+        character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Vector3.up);
     }
 }

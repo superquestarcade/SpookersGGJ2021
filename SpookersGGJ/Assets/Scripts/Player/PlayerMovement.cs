@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
 
-public class PlayerMovement : NetworkBehaviour {
+public class PlayerMovement : MonoBehaviour {
 
     public float speed = 10.0f;
     public bool slowWalk = false;
@@ -48,12 +47,7 @@ public class PlayerMovement : NetworkBehaviour {
         // Check animations
         if (Input.GetKeyDown(KeyCode.E))
         {
-            PlaceObject(true);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            PlaceObject();
+            PickUpObject();
         }
         
         if (Input.GetKeyDown(KeyCode.F))
@@ -67,11 +61,9 @@ public class PlayerMovement : NetworkBehaviour {
         if(playerAnimation != null) playerAnimation.SetPlayerAnim(slow?AnimState.WALK:AnimState.JOG);
     }
 
-    private void PlaceObject(bool standing = false)
+    private void PickUpObject()
     {
-        if(playerAnimation != null) playerAnimation.SetPlayerAnim(standing?AnimState.PLACESTANDING:AnimState.PLACECROUCH);
-        
-        playerHoldObject.Placebject();
+        playerHoldObject.ObjectInteract();
     }
 
     private void LookBehind()
