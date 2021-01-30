@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 288184385}
   - component: {fileID: 288184384}
   - component: {fileID: 288184383}
-  - component: {fileID: 288184382}
+  - component: {fileID: 288184386}
   m_Layer: 0
   m_Name: RoomManager
   m_TagString: Untagged
@@ -274,27 +274,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &288184382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288184381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Port: 7777
-  NoDelay: 1
-  Interval: 10
-  FastResend: 2
-  CongestionWindow: 0
-  SendWindowSize: 128
-  ReceiveWindowSize: 128
-  debugLog: 0
-  debugGUI: 0
 --- !u!114 &288184383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,9 +291,9 @@ MonoBehaviour:
   autoStartServerBuild: 1
   showDebugMessages: 0
   serverTickRate: 30
-  offlineScene: Assets/Scenes/Lobby/OfflineScene.unity
-  onlineScene: Assets/Scenes/LevelBlockoutScene.unity
-  transport: {fileID: 288184382}
+  offlineScene: 
+  onlineScene: Assets/Scenes/Lobby/RoomScene.unity
+  transport: {fileID: 0}
   networkAddress: localhost
   maxConnections: 5
   disconnectInactiveConnections: 0
@@ -347,7 +326,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288184381}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
   m_Name: 
@@ -370,6 +349,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &288184386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288184381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7424c1070fad4ba2a7a96b02fbeb4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  port: 7777
+  NoDelay: 1
+  serverMaxMessageSize: 16384
+  serverMaxReceivesPerTick: 10000
+  clientMaxMessageSize: 16384
+  clientMaxReceivesPerTick: 1000
 --- !u!1 &362631989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1250,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: localhost
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc50236d20fb7ce4d9cfff84cf4451dd, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 5465597396100996067, guid: fc50236d20fb7ce4d9cfff84cf4451dd,
     type: 2}
   m_fontSharedMaterials: []
@@ -1387,7 +1384,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc50236d20fb7ce4d9cfff84cf4451dd, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 5465597396100996067, guid: fc50236d20fb7ce4d9cfff84cf4451dd,
     type: 2}
   m_fontSharedMaterials: []
@@ -2315,7 +2312,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: fc50236d20fb7ce4d9cfff84cf4451dd, type: 2}
+  m_GlobalFontAsset: {fileID: 0}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -2588,7 +2585,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter name...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc50236d20fb7ce4d9cfff84cf4451dd, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 5465597396100996067, guid: fc50236d20fb7ce4d9cfff84cf4451dd,
     type: 2}
   m_fontSharedMaterials: []
@@ -3321,7 +3318,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc50236d20fb7ce4d9cfff84cf4451dd, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 5465597396100996067, guid: fc50236d20fb7ce4d9cfff84cf4451dd,
     type: 2}
   m_fontSharedMaterials: []

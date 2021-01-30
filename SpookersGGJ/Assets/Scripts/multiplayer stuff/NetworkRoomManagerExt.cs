@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Mirror;
-using System;
-using System.Collections.Generic;
-[AddComponentMenu("")]
+    [AddComponentMenu("")]
     public class NetworkRoomManagerExt : NetworkRoomManager
     {
         [Header("Spawner Setup")]
@@ -13,33 +11,17 @@ using System.Collections.Generic;
         [Range(0, 1)]
         public int teamID;
 
-        public List<NetworkRoomPlayerExt> RoomPlayers { get; } = new List<NetworkRoomPlayerExt>();
-
     /// <summary>
     /// This is called on the server when a networked scene finishes loading.
     /// </summary>
     /// <param name="sceneName">Name of the new scene.</param>
-
-        public override void OnServerAddPlayer(NetworkConnection conn)
+    public override void OnRoomServerSceneChanged(string sceneName)
         {
-            // increment the index before adding the player, so first player starts at 1
-            clientIndex++;
-
-            if (IsSceneActive(RoomScene))
+            // spawn the initial batch of Rewards
+            if (sceneName == GameplayScene)
             {
-                if (roomSlots.Count == maxConnections)
-                    return;
-
-                allPlayersReady = false;
-
-                GameObject newRoomGameObject = OnRoomServerCreateRoomPlayer(conn);
-                if (newRoomGameObject == null)
-                    newRoomGameObject = Instantiate(roomPlayerPrefab.gameObject, Vector3.zero, Quaternion.identity);
-
-                NetworkServer.AddPlayerForConnection(conn, newRoomGameObject);
+               // Spawner.InitialSpawn();
             }
-            else
-                OnRoomServerAddPlayer(conn);
         }
 
 
@@ -47,7 +29,7 @@ using System.Collections.Generic;
     /// Called on the server when a client is ready.
     /// <para>The default implementation of this function calls NetworkServer.SetClientReady() to continue the network setup process.</para>
     /// </summary>
-    public override void OnRoomClientEnter() {
+    public virtual void OnRoomClientEnter() {
         if(teamID == 0)
         {
             teamID = 1;
@@ -75,7 +57,7 @@ using System.Collections.Generic;
     /// <summary>
     /// This is a hook to allow custom behaviour when the game client exits the room.
     /// </summary>
-    public override void OnRoomClientExit() {
+    public virtual void OnRoomClientExit() {
         if (teamID == 0)
         {
             teamID = 1;
@@ -84,6 +66,7 @@ using System.Collections.Generic;
         {
             teamID = 0;
         }
+
 
         foreach (NetworkRoomPlayer player in roomSlots)
             if (player != null)
@@ -100,60 +83,8 @@ using System.Collections.Generic;
             }
     }
 
-    public void StartGame()
-    {
-        Debug.Log("start");
-        if (SceneManager.GetActiveScene().name == "RoomScene")
-        {
-            if (!IsReadyToStart()) { return; }
-            ServerChangeScene(GameplayScene);
-        }
-    }
-
-    public void NotifyPlayersOfReadyState()
-    {
-        RoomPlayers[0].IsLeader = true;
-        IsReadyToStart();
-
-        foreach (var player in RoomPlayers)
-        {
-            player.HandleReadyToStart(IsReadyToStart());
-        }
 
 
-    }
-
-    public bool IsReadyToStart()
-    {
-        if (numPlayers < minPlayers) { return false; }
-
-        foreach (var player in RoomPlayers)
-        {
-            if (!player.IsReady) { return false; }
-        }
-
-        return true;
-    }
-
-    public override void OnServerDisconnect(NetworkConnection conn)
-    {
-        if (conn.identity != null)
-        {
-            var player = conn.identity.GetComponent<NetworkRoomPlayerExt>();
-
-            RoomPlayers.Remove(player);
-
-            NotifyPlayersOfReadyState();
-        }
-
-        base.OnServerDisconnect(conn);
-    }
-
-
-    public override void OnStopServer()
-    {
-        RoomPlayers.Clear();
-    }
     /// <summary>
     /// Called just after GamePlayer object is instantiated and just before it replaces RoomPlayer object.
     /// This is the ideal point to pass any data like player name, credentials, tokens, colors, etc.
