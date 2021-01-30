@@ -15,16 +15,18 @@ public class GameManager : NetworkBehaviour
     public UnityEvent OnHalfTime;
     public UnityEvent OnRoundOver;
     public UnityEvent OnGameOver;
+    public UnityEvent SwitchSides;
     public Image _ProgressBar;
 
     public int NumberOfRounds;
+    [SyncVar(hook = nameof(OnNumofRoundChange))] int NumberOfRoundsSync;
 
     float HalfTime;
     NetworkManager networkmanager;
     [SyncVar(hook =nameof(OnCurrRoundChange))]int currround;
     public Text currentRoundNumberText;
     public TextMeshProUGUI RoundNum;
-
+    public Text NumOfRoundsText;
     [SyncVar(hook =nameof(OPdateOnclient))] float currRoundProgress;
     void Start()
     {
@@ -32,7 +34,7 @@ public class GameManager : NetworkBehaviour
         _ProgressBar.fillAmount = 0;
         currround = 1;
         currentRoundNumberText.text = currround.ToString();
-
+        NumberOfRoundsSync = NumberOfRounds; //ToSync
         HalfTime = GameTime / 2;
 
         //Run Timer On Server (Synced to Clients by SyncVar CurrGametime
@@ -44,8 +46,13 @@ public class GameManager : NetworkBehaviour
 
     void GameRunner()
     {
-        if(currround < NumberOfRounds+1)
+        if(currround  < NumberOfRounds +1)
         {
+            if(currround == (NumberOfRounds / 2) + 1 )
+            {
+                SkinSwitchandSpawn();
+                SwitchSides.Invoke();
+            }
             RunRound();
         }
         else
@@ -84,7 +91,7 @@ public class GameManager : NetworkBehaviour
 
         Debug.Log("HalfTime");
         RpcHalfTimeEvents();
-        SkinSwitchandSpawn();
+        //SkinSwitchandSpawn();
         StartCoroutine(halftimeToEnd());
 
     }
@@ -117,6 +124,7 @@ public class GameManager : NetworkBehaviour
 
         Debug.Log("FullTime");
         RpcRoundOver();
+        
         currround++;
         GameRunner();
     }
@@ -151,8 +159,16 @@ public class GameManager : NetworkBehaviour
 
     void OnCurrRoundChange(int oldvalue, int currround)
     {
-        currentRoundNumberText.text = currround.ToString();
-        RoundNum.text = currround.ToString();
+        if (currround != NumberOfRounds+1)
+        {
+            currentRoundNumberText.text = currround.ToString();
+            RoundNum.text = currround.ToString();
+        }
+    }
+
+    void OnNumofRoundChange(int oldvalue, int numofround)
+    {
+        NumOfRoundsText.text = numofround.ToString();
     }
 
 }
