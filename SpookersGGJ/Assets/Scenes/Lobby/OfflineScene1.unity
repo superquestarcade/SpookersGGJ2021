@@ -291,9 +291,9 @@ MonoBehaviour:
   autoStartServerBuild: 1
   showDebugMessages: 0
   serverTickRate: 30
-  offlineScene: 
+  offlineScene: Assets/Scenes/Lobby/OfflineScene1.unity
   onlineScene: Assets/Scenes/Lobby/RoomScene.unity
-  transport: {fileID: 0}
+  transport: {fileID: 288184386}
   networkAddress: localhost
   maxConnections: 5
   disconnectInactiveConnections: 0

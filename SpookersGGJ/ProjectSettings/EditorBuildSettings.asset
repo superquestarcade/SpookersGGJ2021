@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Lobby/OfflineScene1.unity
+    guid: 732b18026ed37ad4581c593db393c05b
+  - enabled: 1
+    path: Assets/Scenes/Lobby/RoomScene.unity
+    guid: 48478f4d522f96945b8396f376299d3a
+  - enabled: 1
+    path: Assets/Scenes/LevelBlockoutScene.unity
+    guid: 998f5006e55b0674b854c0735cdedd12
   m_configObjects: {}
