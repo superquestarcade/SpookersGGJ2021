@@ -32,7 +32,11 @@
 			<destination>{f329937b-d742-4314-b7cb-ab24b965117e}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{feafd094-c112-4d9b-b10b-56f2203ba127}" />
+	<object class="EventAutomatableProperties" id="{feafd094-c112-4d9b-b10b-56f2203ba127}">
+		<relationship name="modulators">
+			<destination>{a9d2709d-ba47-4836-868a-82d15af7dcce}</destination>
+		</relationship>
+	</object>
 	<object class="MarkerTrack" id="{3b09e386-283c-4d16-805f-5301bff13801}" />
 	<object class="Timeline" id="{1ed8aad1-917d-4f25-954f-eee1eaddb7a0}" />
 	<object class="SnapshotMasterTrack" id="{a22a767f-b2e4-4482-a236-15c209e58272}" />
@@ -41,7 +45,7 @@
 			<value>volume</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-40</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{0100ee38-1b55-4837-a039-c07cf3a7768e}</destination>
@@ -52,7 +56,7 @@
 			<value>volume</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-40</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{e3211a18-c7d8-4c78-864d-3350eec6aa29}</destination>
@@ -63,7 +67,7 @@
 			<value>volume</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-40</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{782cbce9-4445-4a76-b5ed-583b7f54fae8}</destination>
@@ -74,7 +78,7 @@
 			<value>volume</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-40</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{01383510-fcd1-4110-b24d-699dad3142ed}</destination>
@@ -99,5 +103,16 @@
 		<relationship name="mixerStrip">
 			<destination>{01383510-fcd1-4110-b24d-699dad3142ed}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{a9d2709d-ba47-4836-868a-82d15af7dcce}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>snapshotIntensity</value>
+		</property>
+		<property name="peakValue">
+			<value>100</value>
+		</property>
+		<property name="sustainValue">
+			<value>100</value>
+		</property>
 	</object>
 </objects>

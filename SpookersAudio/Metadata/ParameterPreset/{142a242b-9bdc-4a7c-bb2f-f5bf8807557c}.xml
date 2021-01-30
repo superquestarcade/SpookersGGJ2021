@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{142a242b-9bdc-4a7c-bb2f-f5bf8807557c}">
+		<property name="name">
+			<value>Vol_PlaceDropObject</value>
+		</property>
+		<relationship name="folder">
+			<destination>{db2bf610-c818-4804-9e70-806c14937cf4}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1fd2a8dc-85c6-4911-8583-aae5ceb26bcf}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1fd2a8dc-85c6-4911-8583-aae5ceb26bcf}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>3</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

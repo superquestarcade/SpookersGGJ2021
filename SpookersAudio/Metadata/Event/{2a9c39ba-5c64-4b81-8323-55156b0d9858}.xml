@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{2a9c39ba-5c64-4b81-8323-55156b0d9858}">
 		<property name="name">
-			<value>Music</value>
+			<value>InGame_Music</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{4c5fc056-b8da-4c91-afd3-53e3078599c1}</destination>
+			<destination>{fe107cd0-d2ce-4798-b7aa-07af00ed429a}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{190cfce6-7052-4581-bf12-ddc013fdfef9}</destination>
@@ -613,10 +613,13 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>30</value>
+			<value>20</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
 		</property>
 		<property name="length">
-			<value>14.471836734693877</value>
+			<value>11.400225667077175</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{a785ce59-d5a3-4ba6-b4dd-f5154a4082a0}</destination>
@@ -745,7 +748,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{b689ac57-dfa2-416c-9ba7-9ab43b093afa}">
 		<property name="volume">
-			<value>-15</value>
+			<value>-25</value>
 		</property>
 		<property name="name">
 			<value>Audio 5</value>
@@ -765,7 +768,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>48</value>
+			<value>12</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{efa66661-1c59-4488-9616-ff36490b19f6}</destination>

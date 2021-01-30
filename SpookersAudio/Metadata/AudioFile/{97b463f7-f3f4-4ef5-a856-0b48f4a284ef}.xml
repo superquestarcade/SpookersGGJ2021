@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{97b463f7-f3f4-4ef5-a856-0b48f4a284ef}">
+		<property name="assetPath">
+			<value>Music/StartScreenMusic/SplashMusic_Chords - Trimmed.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>21.179818594104308</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{27fdbabf-058e-4bf8-842a-d3836c95b753}</destination>
+		</relationship>
+	</object>
+</objects>

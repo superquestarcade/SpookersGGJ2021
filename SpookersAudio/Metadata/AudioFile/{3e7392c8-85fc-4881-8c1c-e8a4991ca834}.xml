@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{4f6b3ad5-4ce0-43b5-91b8-e1a3bb0cd04f}">
+	<object class="AudioFile" id="{3e7392c8-85fc-4881-8c1c-e8a4991ca834}">
 		<property name="assetPath">
-			<value>SpookyGameJamAUDIOSFX/Female Ghostly Breath, Reverse, Exhale, Air, Spirit, Ethereal, Wet 4.wav</value>
+			<value>Music/StartScreenMusic/DRUMS/SplashMusic_SNR.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>96</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>7.5599999999999996</value>
+			<value>17.711020408163265</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{27fdbabf-058e-4bf8-842a-d3836c95b753}</destination>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{36bdaad8-4ede-4096-9b54-3757fdb995d2}">
+		<property name="name">
+			<value>Vol_Footstep</value>
+		</property>
+		<relationship name="folder">
+			<destination>{db2bf610-c818-4804-9e70-806c14937cf4}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{82f93d51-f56b-42e8-9d54-e3912319fdb2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{82f93d51-f56b-42e8-9d54-e3912319fdb2}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>3</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
