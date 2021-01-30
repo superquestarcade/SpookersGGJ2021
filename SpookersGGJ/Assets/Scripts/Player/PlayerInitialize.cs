@@ -28,9 +28,11 @@ public class PlayerInitialize : NetworkBehaviour
     {
         if (!hasAuthority) return;
 
+        AudioManager.singleton.playerObj = this.gameObject;
+        
         playerMovement = this.gameObject.AddComponent<PlayerMovement>();
         playerMovement.speed = playerSpeed;
-        
+
         playerAnimation = this.GetComponentInChildren<PlayerAnimation>();
 
         playerAnimation.playerMovement = playerMovement;

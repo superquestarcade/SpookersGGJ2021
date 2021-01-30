@@ -14,16 +14,26 @@ public class PlayerMovement : MonoBehaviour {
     public float Strafe => strafe;
 
     private PlayerAnimation playerAnimation;
+    private PlayerAudio playerAudio;
 
-    private PlayerHoldObject playerHoldObject;
+    public PlayerHoldObject playerHoldObject;
+
+    private bool init = true;
+    
+    // Tracking footstep sounds
+    public float footstepFrequency = 0.2f;
+    private float footsteptimer = 0f;
 
     // Use this for initialization
     void Start () {
         
         // turn off the cursor
         Cursor.lockState = CursorLockMode.Locked;
+        
         playerAnimation = GetComponent<PlayerAnimation>();
+        playerAudio = GetComponent<PlayerAudio>();
         playerHoldObject = GetComponent<PlayerHoldObject>();
+        
     }
 	
     // Update is called once per frame
@@ -54,6 +64,8 @@ public class PlayerMovement : MonoBehaviour {
         {
             LookBehind();
         }
+
+        Footsteps();
     }
 
     private void SetSlowWalk(bool slow)
@@ -64,6 +76,7 @@ public class PlayerMovement : MonoBehaviour {
     private void PickUpObject()
     {
         playerHoldObject.ObjectInteract();
+        if(playerAudio != null) playerAudio.CmdAudioPickup(this.gameObject);
     }
 
     private void LookBehind()
@@ -74,5 +87,17 @@ public class PlayerMovement : MonoBehaviour {
     public float Velocity()
     {
         return new Vector2(strafe, _velocity).magnitude;
+    }
+
+    private void Footsteps()
+    {
+        if (_velocity != 0f)
+        {
+            footsteptimer += _velocity * Time.deltaTime;
+            if (footsteptimer >= footstepFrequency)
+            {
+                if (playerAudio != null) playerAudio.CmdAudioFootstep(this.gameObject);
+            }
+        }
     }
 }

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:SpookersGGJ/Assets/Scenes/Lobby 1.meta
 guid: a74235cdea3025341ade71df8a0492cd
+=======
+guid: 671cc7fb48881d847b5a6294bbe544d9
+>>>>>>> feature/ImplementLevel:SpookersGGJ/Assets/Prefabs/Managers.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

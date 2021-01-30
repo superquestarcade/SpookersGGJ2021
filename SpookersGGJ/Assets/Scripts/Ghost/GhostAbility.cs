@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class GhostAbility : MonoBehaviour
+public class GhostAbility : NetworkBehaviour
 {
     public int randomDecoySound, newSound, oldSound;
     public bool ghostCD;
