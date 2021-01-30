@@ -113,8 +113,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72.9, y: 4.6999893}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -28, y: 56}
+  m_SizeDelta: {x: 416.91193, y: 76.57576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &228024265231757259
 CanvasRenderer:
@@ -351,8 +351,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72.9, y: -26.7}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -28, y: 7.899994}
+  m_SizeDelta: {x: 416.91193, y: 76.57576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3335044588421969506
 CanvasRenderer:
@@ -485,8 +485,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72.9, y: 43.6}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -28, y: 115.59999}
+  m_SizeDelta: {x: 416.91193, y: 76.57576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3891352187527201311
 CanvasRenderer:
@@ -882,8 +882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72.9, y: -61.4}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -28, y: -45.200005}
+  m_SizeDelta: {x: 416.91193, y: 76.57576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &143505824445007577
 CanvasRenderer:
@@ -1392,6 +1392,7 @@ GameObject:
   - component: {fileID: 8185695470785931996}
   - component: {fileID: 8185904460401790502}
   - component: {fileID: 2944875287292774932}
+  - component: {fileID: 3594315379453489418}
   m_Layer: 0
   m_Name: RoomPlayer
   m_TagString: GamePlayer
@@ -1461,6 +1462,7 @@ MonoBehaviour:
   startGameButton: {fileID: 4898903077441828097}
   DisplayName: Loading...
   IsReady: 0
+  isLeader: 0
 --- !u!114 &2944875287292774932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1477,6 +1479,22 @@ MonoBehaviour:
   syncInterval: 0.1
   name: ' '
   teamID: 0
+--- !u!114 &3594315379453489418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8073451482018955584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19611ca9c74149145abdf654d8624d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  toenable:
+  - {fileID: 2078683307704098824}
 --- !u!1 &8074687692459519244
 GameObject:
   m_ObjectHideFlags: 0

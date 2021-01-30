@@ -19,14 +19,6 @@ using System.Collections.Generic;
     /// This is called on the server when a networked scene finishes loading.
     /// </summary>
     /// <param name="sceneName">Name of the new scene.</param>
-    public override void OnRoomServerSceneChanged(string sceneName)
-        {
-            // spawn the initial batch of Rewards
-            if (sceneName == GameplayScene)
-            {
-               // Spawner.InitialSpawn();
-            }
-        }
 
         public override void OnServerAddPlayer(NetworkConnection conn)
         {

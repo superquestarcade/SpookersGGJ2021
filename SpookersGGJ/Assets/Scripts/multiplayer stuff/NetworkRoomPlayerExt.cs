@@ -128,7 +128,7 @@ using Mirror;
         Room.StartGame();
     }
 
-    /*
+    
     public override void OnClientEnterRoom()
         {
             if (logger.LogEnabled()) logger.LogFormat(LogType.Log, "OnClientEnterRoom {0}", SceneManager.GetActiveScene().path);

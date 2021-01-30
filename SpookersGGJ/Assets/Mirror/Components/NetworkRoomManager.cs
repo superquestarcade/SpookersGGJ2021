@@ -357,7 +357,7 @@ using Mirror;
         {
             if (newSceneName == RoomScene)
             {
-            /*
+            
                 foreach (NetworkRoomPlayer roomPlayer in roomSlots)
                 {
                     if (roomPlayer == null)
@@ -373,7 +373,7 @@ using Mirror;
                         NetworkServer.ReplacePlayerForConnection(identity.connectionToClient, roomPlayer.gameObject);
                     }
                 }
-                */
+                
                 allPlayersReady = false;
             }
 
