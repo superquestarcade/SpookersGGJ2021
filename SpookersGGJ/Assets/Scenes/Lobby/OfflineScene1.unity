@@ -293,7 +293,7 @@ MonoBehaviour:
   serverTickRate: 30
   offlineScene: 
   onlineScene: Assets/Scenes/Lobby/RoomScene.unity
-  transport: {fileID: 0}
+  transport: {fileID: 288184386}
   networkAddress: localhost
   maxConnections: 5
   disconnectInactiveConnections: 0
