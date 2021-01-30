@@ -353,6 +353,9 @@
 		</property>
 	</object>
 	<object class="EventMixerGroup" id="{3a8eeda9-b4b6-45cf-96df-99e035f81e19}">
+		<property name="volume">
+			<value>1</value>
+		</property>
 		<property name="name">
 			<value>LayerSynth</value>
 		</property>
@@ -745,6 +748,9 @@
 		</property>
 	</object>
 	<object class="EventMixerGroup" id="{068e7d6b-76fd-4515-b9bc-6670198f6585}">
+		<property name="volume">
+			<value>3</value>
+		</property>
 		<property name="name">
 			<value>Audio 5</value>
 		</property>
