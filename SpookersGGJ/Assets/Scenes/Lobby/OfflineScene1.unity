@@ -312,8 +312,8 @@ MonoBehaviour:
   autoStartServerBuild: 1
   showDebugMessages: 0
   serverTickRate: 30
-  offlineScene: Assets/Scenes/Lobby/OfflineScene.unity
-  onlineScene: Assets/Scenes/LevelBlockoutScene.unity
+  offlineScene: 
+  onlineScene: Assets/Scenes/Lobby/RoomScene.unity
   transport: {fileID: 288184382}
   networkAddress: localhost
   maxConnections: 5
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288184381}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
   m_Name: 
@@ -1253,7 +1253,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: localhost
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc50236d20fb7ce4d9cfff84cf4451dd, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 5465597396100996067, guid: fc50236d20fb7ce4d9cfff84cf4451dd,
     type: 2}
   m_fontSharedMaterials: []
@@ -1387,7 +1387,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc50236d20fb7ce4d9cfff84cf4451dd, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 5465597396100996067, guid: fc50236d20fb7ce4d9cfff84cf4451dd,
     type: 2}
   m_fontSharedMaterials: []
@@ -2315,7 +2315,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: fc50236d20fb7ce4d9cfff84cf4451dd, type: 2}
+  m_GlobalFontAsset: {fileID: 0}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -2588,7 +2588,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter name...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc50236d20fb7ce4d9cfff84cf4451dd, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 5465597396100996067, guid: fc50236d20fb7ce4d9cfff84cf4451dd,
     type: 2}
   m_fontSharedMaterials: []
@@ -3321,7 +3321,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc50236d20fb7ce4d9cfff84cf4451dd, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 5465597396100996067, guid: fc50236d20fb7ce4d9cfff84cf4451dd,
     type: 2}
   m_fontSharedMaterials: []
