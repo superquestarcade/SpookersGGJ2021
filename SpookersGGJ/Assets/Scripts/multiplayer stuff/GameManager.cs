@@ -64,6 +64,12 @@ public class GameManager : NetworkBehaviour
 
     public void returntoLobby() //call from a button
     {
+        CmdreturntoLobby();
+    }
+
+    [Command]
+    void CmdreturntoLobby()
+    {
         NetworkRoomManagerExt.singleton.ServerChangeScene("RoomScene");
     }
 

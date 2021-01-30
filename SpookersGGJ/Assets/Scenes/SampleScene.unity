@@ -413,8 +413,8 @@ GameObject:
   m_Component:
   - component: {fileID: 834608585}
   - component: {fileID: 834608588}
-  - component: {fileID: 834608587}
   - component: {fileID: 834608586}
+  - component: {fileID: 834608587}
   m_Layer: 0
   m_Name: NetManager
   m_TagString: Untagged
@@ -460,18 +460,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 834608584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
+  m_Script: {fileID: 11500000, guid: c7424c1070fad4ba2a7a96b02fbeb4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Port: 7777
+  port: 7777
   NoDelay: 1
-  Interval: 10
-  FastResend: 2
-  CongestionWindow: 0
-  SendWindowSize: 128
-  ReceiveWindowSize: 128
-  debugLog: 0
-  debugGUI: 0
+  serverMaxMessageSize: 16384
+  serverMaxReceivesPerTick: 10000
+  clientMaxMessageSize: 16384
+  clientMaxReceivesPerTick: 1000
 --- !u!114 &834608588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,7 +488,7 @@ MonoBehaviour:
   serverTickRate: 30
   offlineScene: 
   onlineScene: 
-  transport: {fileID: 834608587}
+  transport: {fileID: 0}
   networkAddress: localhost
   maxConnections: 4
   disconnectInactiveConnections: 0
