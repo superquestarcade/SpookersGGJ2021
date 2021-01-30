@@ -313,7 +313,7 @@ MonoBehaviour:
   showDebugMessages: 0
   serverTickRate: 30
   offlineScene: Assets/Scenes/Lobby/OfflineScene.unity
-  onlineScene: Assets/Scenes/Lobby/RoomScene.unity
+  onlineScene: Assets/Scenes/LevelBlockoutScene.unity
   transport: {fileID: 288184382}
   networkAddress: localhost
   maxConnections: 5
@@ -333,7 +333,7 @@ MonoBehaviour:
   roomPlayerPrefab: {fileID: 114033720796874720, guid: deae2134a1d77704b9c595efe69767dd,
     type: 3}
   RoomScene: Assets/Scenes/Lobby/RoomScene.unity
-  GameplayScene: Assets/Scenes/Lobby/OnlineScene.unity
+  GameplayScene: Assets/Scenes/LevelBlockoutScene.unity
   _allPlayersReady: 0
   roomSlots: []
   clientIndex: 0
