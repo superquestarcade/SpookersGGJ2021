@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 264401207301374396}
   - component: {fileID: 1631564000694742046}
   - component: {fileID: 1301837756823334222}
+  - component: {fileID: 8261965955455250093}
   m_Layer: 0
   m_Name: FPPCam
   m_TagString: MainCamera
@@ -201,9 +202,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b326f9fc86aae4ca0a9851e3c32040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   invertYaxis: 1
   sensitivity: 1
   smoothing: 2
   character: {fileID: 0}
+--- !u!114 &8261965955455250093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301837756823334217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1

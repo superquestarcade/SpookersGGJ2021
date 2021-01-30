@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 131.16855, g: 162.52502, b: 215.10977, a: 1}
+  m_IndirectSpecularColor: {r: 62.258774, g: 126.82333, b: 288.37668, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -96475,6 +96475,80 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &577542125566084245
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 577542126140916394, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: playerObj
+      value: 
+      objectReference: {fileID: 2604708654683456733}
+    - target: {fileID: 577542126140916395, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 577542126140916437, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 577542126140916437, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577542126140916437, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577542126140916437, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577542126140916437, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 577542126140916437, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577542126140916437, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577542126140916437, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577542126140916437, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577542126140916437, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577542126140916437, guid: 6539d8460414abf468b3d558175f0a49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6539d8460414abf468b3d558175f0a49, type: 3}
 --- !u!4 &588333740647835304
 Transform:
   m_ObjectHideFlags: 0
@@ -97151,6 +97225,8 @@ MonoBehaviour:
   pickupAnimationDelay: 0.8
   objectInHand: {fileID: 8632029156158975832}
   placeObjectHere: {fileID: 299382100}
+  holdingObject: 0
+  canPickUpObject: 0
   audioManager: {fileID: 0}
 --- !u!114 &2604708654683456736
 MonoBehaviour:

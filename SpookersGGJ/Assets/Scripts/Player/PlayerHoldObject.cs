@@ -36,9 +36,9 @@ public class PlayerHoldObject : MonoBehaviour
             canPickUpObject = false;
             holdingObject = true;
         
-            if(audioManager != null) audioManager.PlayPickupItem();
+            AudioManager.singleton.PlayPickupItem();
             if(playerAnimation != null) playerAnimation.SetPlayerAnim(AnimState.PLACECROUCH);
-            
+
             StartCoroutine(DelayPickupObject(pickupAnimationDelay));
             
             if (debugMessages) Debug.Log($"Picked up object");
@@ -51,7 +51,7 @@ public class PlayerHoldObject : MonoBehaviour
             holdingObject = false;
             canPickUpObject = false;
         
-            if(audioManager != null) audioManager.PlayPutDownItem();
+            AudioManager.singleton.PlayPutDownItem();
             if(playerAnimation != null) playerAnimation.SetPlayerAnim(AnimState.PLACECROUCH);
             
             StartCoroutine(DelayPlaceObject(pickupAnimationDelay));
