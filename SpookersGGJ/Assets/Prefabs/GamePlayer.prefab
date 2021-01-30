@@ -64,7 +64,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   playerproperties: {fileID: 4741778589331168114}
-  GhostSkin: {fileID: 8999495296954127410, guid: 9f78d2f4ac11ca24f9b39215210a8520,
+  GhostSkin: {fileID: 7132921988023704018, guid: 70d7c044a19262c47930b70df46077f7,
     type: 3}
   HumanSkin: {fileID: 7132921988023704018, guid: 70d7c044a19262c47930b70df46077f7,
     type: 3}

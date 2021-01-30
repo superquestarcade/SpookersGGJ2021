@@ -59,45 +59,70 @@ public class AudioManager : MonoBehaviour
     }
     
     // Human footstep
-    public void PlayHumanFootstep()
+    public void PlayHumanFootstep(GameObject player = null)
     {
+        if (player == playerObj)
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from local player");
+        }
+        else
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from {player.name}");
+        }
+        
         if(debugMessages) Debug.Log("Playing audio path: " + humanFootstepPath);
         FMODUnity.RuntimeManager.PlayOneShotAttached(humanFootstepPath, playerObj);
     }
     
     // Ghost footstep
-    public void PlayGhostFootstep()
+    public void PlayGhostFootstep(GameObject player = null)
     {
+        if (player == playerObj)
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from local player");
+        }
+        else
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from {player.name}");
+        }
         if(debugMessages) Debug.Log("Playing audio path: " + ghostFootstepPath);
         FMODUnity.RuntimeManager.PlayOneShotAttached(ghostFootstepPath, playerObj);
     }
 
     // Pickup item
-    public void PlayPickupItem()
+    public void PlayPickupItem(GameObject player = null)
     {
-        if(debugMessages) Debug.Log("Playing audio path: " + pickupItemPath);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickupItem, playerObj.transform, playerObj.GetComponent<Rigidbody>());
+        if (player == playerObj)
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from local player");
+        }
+        else
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from {player.name}");
+        }
+        
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickupItem, player.transform, player.GetComponent<Rigidbody>());
         pickupItem.start();
         pickupItem.release();
     }
 
-    public void SetAudioFilterState(AudioFilter filter, float value)
+    public void SetAudioFilterState(AudioTrigger trigger, float value)
     {
-        if(debugMessages) Debug.Log($"Setting audio filter {filter} to state {value}");
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName(GetFilterAsString(filter), value, false);
+        if(debugMessages) Debug.Log($"Setting audio filter {trigger} to state {value}");
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName(GetFilterAsString(trigger), value, false);
     }
 
-    private string GetFilterAsString(AudioFilter filter)
+    private string GetFilterAsString(AudioTrigger trigger)
     {
-        switch (filter)
+        switch (trigger)
         {
-            case AudioFilter.FOOTSTEPS:
+            case AudioTrigger.FOOTSTEPS:
                 return "Vol_Footsteps";
-            case AudioFilter.PINGOBJECT:
+            case AudioTrigger.PINGOBJECT:
                 return "Vol_PingObject";
-            case AudioFilter.PLACEOBJECT:
+            case AudioTrigger.PLACEOBJECT:
                 return "Vol_PlaceObject";
-            case AudioFilter.PICKUPOBJECT:
+            case AudioTrigger.PICKUPOBJECT:
                 return "Vol_PickUpObject";
         }
 
@@ -197,7 +222,7 @@ public class AudioManager : MonoBehaviour
     }
 }
 
-public enum AudioFilter
+public enum AudioTrigger
 {
     FOOTSTEPS,
     PLACEOBJECT,

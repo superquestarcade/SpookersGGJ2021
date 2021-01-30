@@ -76,7 +76,7 @@ MonoBehaviour:
     type: 3}
   playerObj: {fileID: 8999495297761928246}
   invertMouse: 1
-  playerSpeed: 4.5
+  playerSpeed: 2.8
   playerSkinMaterial: {fileID: 2100000, guid: 4dc1532ace109844a90686de4be36bf2, type: 2}
 --- !u!114 &6580205219869809407
 MonoBehaviour:
@@ -90,8 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29681fcdc13ac847aec296c127d53a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   anim: {fileID: 4222829636700495805}
   playerMovement: {fileID: 0}
 --- !u!54 &8999495296954127420

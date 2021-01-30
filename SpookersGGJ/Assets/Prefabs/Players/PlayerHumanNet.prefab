@@ -1810,6 +1810,7 @@ GameObject:
   - component: {fileID: 687860694727792187}
   - component: {fileID: 4992255870575630111}
   - component: {fileID: 7132921988023704016}
+  - component: {fileID: -4335454029618901804}
   - component: {fileID: 7132921988023704028}
   - component: {fileID: 7132921988023704024}
   - component: {fileID: 7132921988023704031}
@@ -1857,7 +1858,7 @@ MonoBehaviour:
     type: 3}
   playerObj: {fileID: 7132921988294896086}
   invertMouse: 1
-  playerSpeed: 5
+  playerSpeed: 3
   playerSkinMaterial: {fileID: 2100000, guid: 4dc1532ace109844a90686de4be36bf2, type: 2}
 --- !u!114 &4992255870575630111
 MonoBehaviour:
@@ -1890,7 +1891,23 @@ MonoBehaviour:
   pickupAnimationDelay: 0.8
   objectInHand: {fileID: 3536401792027423319}
   placeObjectHere: {fileID: 4949372732171340516}
+  holdingObject: 0
+  canPickUpObject: 0
   audioManager: {fileID: 0}
+--- !u!114 &-4335454029618901804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132921988023704018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dee834537026714b8dc73cf69bf7081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!54 &7132921988023704028
 Rigidbody:
   m_ObjectHideFlags: 0
