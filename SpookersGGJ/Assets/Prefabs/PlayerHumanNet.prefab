@@ -1825,7 +1825,7 @@ MonoBehaviour:
     type: 3}
   playerObj: {fileID: 7132921988294896086}
   invertMouse: 1
-  playerSpeed: 1
+  playerSpeed: 5
   playerSkinMaterial: {fileID: 2100000, guid: 4dc1532ace109844a90686de4be36bf2, type: 2}
 --- !u!114 &4992255870575630111
 MonoBehaviour:
