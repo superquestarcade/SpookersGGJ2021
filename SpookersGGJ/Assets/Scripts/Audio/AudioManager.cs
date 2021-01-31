@@ -60,8 +60,6 @@ public class AudioManager : MonoBehaviour
 
         pickupItem = FMODUnity.RuntimeManager.CreateInstance(pickupItemPath);
 
-<<<<<<< HEAD:SpookersGGJ/Assets/Scripts/Audio/AudioManager.cs
-=======
         ghostFootstep = FMODUnity.RuntimeManager.CreateInstance(ghostFootstepPath);
 
         putDownItem = FMODUnity.RuntimeManager.CreateInstance(putDownPath);
@@ -70,7 +68,6 @@ public class AudioManager : MonoBehaviour
 
         humanFootstep = FMODUnity.RuntimeManager.CreateInstance(humanFootstepPath);
         
->>>>>>> feature/AudioManager:SpookersGGJ/Assets/Scripts/AudioManager.cs
     }
     
     // Human footstep
@@ -112,7 +109,7 @@ public class AudioManager : MonoBehaviour
     // Pickup item
     public void PlayPickupItem(GameObject player = null)
     {
-<<<<<<< HEAD:SpookersGGJ/Assets/Scripts/Audio/AudioManager.cs
+
         if (player == playerObj)
         {
             if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from local player");
@@ -123,11 +120,11 @@ public class AudioManager : MonoBehaviour
         }
         
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickupItem, player.transform, player.GetComponent<Rigidbody>());
-=======
+
         if(debugMessages) Debug.Log("Playing audio path: " + pickupItemPath);
         //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Vol_PickUpObject", audioFilterState, false);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickupItem, transform, GetComponent<Rigidbody>());
->>>>>>> feature/AudioManager:SpookersGGJ/Assets/Scripts/AudioManager.cs
+
         pickupItem.start();
         pickupItem.release();
     }
