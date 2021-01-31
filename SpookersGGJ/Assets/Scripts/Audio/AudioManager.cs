@@ -1,0 +1,264 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using FMOD.Studio;
+using UnityEngine;
+
+[DisallowMultipleComponent]
+public class AudioManager : MonoBehaviour
+{
+    public bool debugMessages = false;
+    
+    public static AudioManager singleton { get; private set; }
+    public bool dontDestroyOnLoad = true;
+    
+    public GameObject playerObj;
+    
+    FMOD.Studio.EventInstance levelMusic;
+    public string levelMusicEventPath = "event:/Music/InGame_Music";
+    
+    FMOD.Studio.EventInstance startScreenMusic;
+    public string startScreenMusicEventPath = "event:/Music/SplashScreen_Music";
+    
+    FMOD.Studio.EventInstance levelAmb;
+    public string levelAmbienceEventPath = "event:/Atmos";
+    
+    FMOD.Studio.EventInstance countdown;
+    public string countdownEventPath = "event:/SFX/Clock";
+
+    FMOD.Studio.EventInstance humanFootstep;
+    public string humanFootstepPath = "";
+    
+    FMOD.Studio.EventInstance ghostFootstep;
+    public string ghostFootstepPath = "";
+    
+    FMOD.Studio.EventInstance pickupItem;
+    public string pickupItemPath = "";
+    
+    FMOD.Studio.EventInstance putDownItem;
+    public string putDownPath = "";
+
+    public string humanFindItemPath = "";
+    
+    FMOD.Studio.EventInstance pingItem;
+    public string pingItemPath = "";
+    
+    public string uiButtonClickPath = "";
+    public string uiButtonHoverPath = "";
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        InitializeSingleton();
+        
+        levelMusic = FMODUnity.RuntimeManager.CreateInstance(levelMusicEventPath);
+
+        startScreenMusic = FMODUnity.RuntimeManager.CreateInstance(startScreenMusicEventPath);
+        
+        levelAmb = FMODUnity.RuntimeManager.CreateInstance(levelAmbienceEventPath);
+        
+        countdown = FMODUnity.RuntimeManager.CreateInstance(countdownEventPath);
+
+        pickupItem = FMODUnity.RuntimeManager.CreateInstance(pickupItemPath);
+
+        ghostFootstep = FMODUnity.RuntimeManager.CreateInstance(ghostFootstepPath);
+
+        putDownItem = FMODUnity.RuntimeManager.CreateInstance(putDownPath);
+
+        pingItem = FMODUnity.RuntimeManager.CreateInstance(pingItemPath);
+
+        humanFootstep = FMODUnity.RuntimeManager.CreateInstance(humanFootstepPath);
+        
+    }
+    
+    // Human footstep
+    public void PlayHumanFootstep(GameObject player = null)
+    {
+        if (player == playerObj)
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from local player");
+        }
+        else
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from {player.name}");
+        }
+        
+        if(debugMessages) Debug.Log("Playing audio path: " + humanFootstepPath);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(humanFootstepPath, playerObj);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(humanFootstep, transform, GetComponent<Rigidbody>());
+        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("HumanFootstepMaterial", FootstepMaterial);
+        humanFootstep.start();
+    }
+    
+    // Ghost footstep
+    public void PlayGhostFootstep(GameObject player = null)
+    {
+        if (player == playerObj)
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from local player");
+        }
+        else
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from {player.name}");
+        }
+        if(debugMessages) Debug.Log("Playing audio path: " + ghostFootstepPath);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(ghostFootstepPath, playerObj);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(ghostFootstep, transform, GetComponent<Rigidbody>());
+        ghostFootstep.start();
+    }
+
+    // Pickup item
+    public void PlayPickupItem(GameObject player = null)
+    {
+
+        if (player == playerObj)
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from local player");
+        }
+        else
+        {
+            if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from {player.name}");
+        }
+        
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickupItem, player.transform, player.GetComponent<Rigidbody>());
+
+        if(debugMessages) Debug.Log("Playing audio path: " + pickupItemPath);
+        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Vol_PickUpObject", audioFilterState, false);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickupItem, transform, GetComponent<Rigidbody>());
+
+        pickupItem.start();
+        pickupItem.release();
+    }
+
+    public void SetAudioFilterState(AudioTrigger trigger, float value)
+    {
+        if(debugMessages) Debug.Log($"Setting audio filter {trigger} to state {value}");
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName(GetFilterAsString(trigger), value, false);
+    }
+
+    private string GetFilterAsString(AudioTrigger trigger)
+    {
+        switch (trigger)
+        {
+            case AudioTrigger.FOOTSTEPS:
+                return "Vol_Footsteps";
+            case AudioTrigger.PINGOBJECT:
+                return "Vol_PingObject";
+            case AudioTrigger.PLACEOBJECT:
+                return "Vol_PlaceObject";
+            case AudioTrigger.PICKUPOBJECT:
+                return "Vol_PickUpObject";
+        }
+
+        return null;
+    }
+
+    // Put down item
+    public void PlayPutDownItem()
+    {
+        if(debugMessages) Debug.Log("Playing audio path: " + putDownPath);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(putDownPath, playerObj);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(putDownItem, transform, GetComponent<Rigidbody>());
+        putDownItem.start();
+        putDownItem.release();
+    }
+
+    // Human find object
+    public void PlayHumanFindItem()
+    {
+        if(debugMessages) Debug.Log("Playing audio path: " + humanFindItemPath);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(humanFindItemPath, playerObj);
+    }
+
+    // Ping item
+    public void PlayPingItem()
+    {
+        if(debugMessages) Debug.Log("Playing audio path: " + pingItemPath);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(pingItemPath, playerObj);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(pingItem, transform, GetComponent<Rigidbody>());
+        pingItem.start();
+        pingItem.release();
+    }
+
+    // UI button click
+    public void PlayUiButtonClick()
+    {
+        if(debugMessages) Debug.Log("Playing audio path: " + uiButtonClickPath);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(uiButtonClickPath, playerObj);
+    }
+    public void PlayUiButtonHover()
+    {
+        if(debugMessages) Debug.Log("Playing audio path: " + uiButtonHoverPath);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(uiButtonHoverPath, playerObj);
+    }
+
+    // Music
+    public void LevelMusicActive(bool play = true)
+    {
+        ResetMusicAmbience();
+        if (play) levelMusic.start();
+    }
+    public void StartScreenMusicActive(bool play = true)
+    {
+        ResetMusicAmbience();
+        if (play) startScreenMusic.start();
+    }
+    
+    // Ambience
+    public void AmbienceActive(bool play = true)
+    {
+        if (play) levelAmb.start();
+    }
+
+    private void ResetMusicAmbience()
+    {
+        levelMusic.stop(STOP_MODE.ALLOWFADEOUT);
+        startScreenMusic.stop(STOP_MODE.ALLOWFADEOUT);
+        levelAmb.stop(STOP_MODE.ALLOWFADEOUT);
+    }
+
+    // Countdown
+    public void CountdownActive(bool play = true)
+    {
+        if (play) 
+        {
+            //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Countdown", clockTime);
+            countdown.start();
+        }
+        else countdown.stop(STOP_MODE.IMMEDIATE);
+    }
+    
+    bool InitializeSingleton()
+    {
+        if (singleton != null && singleton == this) return true;
+
+        if (dontDestroyOnLoad)
+        {
+            if (singleton != null)
+            {
+                if(debugMessages) Debug.LogWarning("Multiple AudioManager detected in the scene. Only one AudioManager can exist at a time. The duplicate AudioManager will be destroyed.");
+                Destroy(gameObject);
+
+                // Return false to not allow collision-destroyed second instance to continue.
+                return false;
+            }
+            if(debugMessages) Debug.Log("AudioManager created singleton (DontDestroyOnLoad)");
+            singleton = this;
+            if (Application.isPlaying) DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if(debugMessages) Debug.Log("AudioManager created singleton (ForScene)");
+            singleton = this;
+        }
+
+        return true;
+    }
+}
+
+public enum AudioTrigger
+{
+    FOOTSTEPS,
+    PLACEOBJECT,
+    PICKUPOBJECT,
+    PINGOBJECT
+}

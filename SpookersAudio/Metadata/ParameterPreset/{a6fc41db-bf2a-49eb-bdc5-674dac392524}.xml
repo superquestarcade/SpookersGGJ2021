@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{a6fc41db-bf2a-49eb-bdc5-674dac392524}">
+		<property name="name">
+			<value>HumanFootstepMaterial</value>
+		</property>
+		<relationship name="folder">
+			<destination>{db2bf610-c818-4804-9e70-806c14937cf4}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5a8f9c2d-92f6-4db1-92f1-7e54414d4965}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5a8f9c2d-92f6-4db1-92f1-7e54414d4965}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+	</object>
+</objects>

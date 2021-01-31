@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{05b286d8-68bc-4347-a90d-e5e0240946d1}">
+		<property name="assetPath">
+			<value>SpookyGameJamAUDIOSFX/UI/StartSelect,UI,set3,pure,warm,simple,quick,tonal,deaction - Trimmed.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{27fdbabf-058e-4bf8-842a-d3836c95b753}</destination>
+		</relationship>
+	</object>
+</objects>

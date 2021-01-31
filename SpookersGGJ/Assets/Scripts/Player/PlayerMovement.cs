@@ -1,0 +1,103 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour {
+
+    public float speed = 10.0f;
+    public bool slowWalk = false;
+    [SerializeField] private float _velocity;
+
+    public float Forward => _velocity; 
+    
+    private float strafe;
+    public float Strafe => strafe;
+
+    private PlayerAnimation playerAnimation;
+    private PlayerAudio playerAudio;
+
+    public PlayerHoldObject playerHoldObject;
+
+    private bool init = true;
+    
+    // Tracking footstep sounds
+    public float footstepFrequency = 0.2f;
+    private float footsteptimer = 0f;
+
+    // Use this for initialization
+    void Start () {
+        
+        // turn off the cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        
+        playerAnimation = GetComponent<PlayerAnimation>();
+        playerAudio = GetComponent<PlayerAudio>();
+        playerHoldObject = GetComponent<PlayerHoldObject>();
+        
+    }
+	
+    // Update is called once per frame
+    void Update () {
+        // Input.GetAxis() is used to get the user's input
+        // You can furthor set it on Unity. (Edit, Project Settings, Input)
+
+        slowWalk = Input.GetButton("Shift");
+        
+        SetSlowWalk(slowWalk);
+        
+        _velocity = Input.GetAxis("Vertical") * speed * (slowWalk?0.5f:1) * Time.deltaTime;
+        strafe = Input.GetAxis("Horizontal") * speed * (slowWalk?0.5f:1) * Time.deltaTime;
+        transform.Translate(strafe, 0, _velocity);
+
+        if (Input.GetKeyDown("escape")) {
+            // turn on the cursor
+            Cursor.lockState = CursorLockMode.None;
+        }
+        
+        // Check animations
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PickUpObject();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            LookBehind();
+        }
+
+        Footsteps();
+    }
+
+    private void SetSlowWalk(bool slow)
+    {
+        if(playerAnimation != null) playerAnimation.SetPlayerAnim(slow?AnimState.WALK:AnimState.JOG);
+    }
+
+    private void PickUpObject()
+    {
+        playerHoldObject.ObjectInteract();
+        if(playerAudio != null) playerAudio.CmdAudioPickup(this.gameObject);
+    }
+
+    private void LookBehind()
+    {
+        if(playerAnimation != null) playerAnimation.SetPlayerAnim(AnimState.LOOKBEHIND);
+    }
+
+    public float Velocity()
+    {
+        return new Vector2(strafe, _velocity).magnitude;
+    }
+
+    private void Footsteps()
+    {
+        if (_velocity != 0f)
+        {
+            footsteptimer += _velocity * Time.deltaTime;
+            if (footsteptimer >= footstepFrequency)
+            {
+                if (playerAudio != null) playerAudio.CmdAudioFootstep(this.gameObject);
+            }
+        }
+    }
+}

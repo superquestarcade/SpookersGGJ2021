@@ -3,9 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
-
-namespace Mirror
-{
+using Mirror;
     /// <summary>
     /// This is a specialized NetworkManager that includes a networked room.
     /// </summary>
@@ -19,6 +17,7 @@ namespace Mirror
     public class NetworkRoomManager : NetworkManager
     {
         static readonly ILogger logger = LogFactory.GetLogger(typeof(NetworkRoomManager));
+
 
         public struct PendingPlayer
         {
@@ -187,7 +186,8 @@ namespace Mirror
                 Transform startPos = GetStartPosition();
                 gamePlayer = startPos != null
                     ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
-                    : Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+                    : Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);              
+
             }
 
             if (!OnRoomServerSceneLoadedForPlayer(conn, roomPlayer, gamePlayer))
@@ -324,6 +324,8 @@ namespace Mirror
 
                 if (logger.LogEnabled()) logger.LogFormat(LogType.Log, "NetworkRoomManager.OnServerAddPlayer playerPrefab:{0}", roomPlayerPrefab.name);
 
+
+
                 GameObject newRoomGameObject = OnRoomServerCreateRoomPlayer(conn);
                 if (newRoomGameObject == null)
                     newRoomGameObject = Instantiate(roomPlayerPrefab.gameObject, Vector3.zero, Quaternion.identity);
@@ -355,6 +357,7 @@ namespace Mirror
         {
             if (newSceneName == RoomScene)
             {
+            
                 foreach (NetworkRoomPlayer roomPlayer in roomSlots)
                 {
                     if (roomPlayer == null)
@@ -370,7 +373,7 @@ namespace Mirror
                         NetworkServer.ReplacePlayerForConnection(identity.connectionToClient, roomPlayer.gameObject);
                     }
                 }
-
+                
                 allPlayersReady = false;
             }
 
@@ -610,7 +613,7 @@ namespace Mirror
         public virtual void OnRoomServerPlayersReady()
         {
             // all players are readyToBegin, start the game
-            ServerChangeScene(GameplayScene);
+           // ServerChangeScene(GameplayScene);
         }
 
         /// <summary>
@@ -694,4 +697,4 @@ namespace Mirror
 
         #endregion
     }
-}
+

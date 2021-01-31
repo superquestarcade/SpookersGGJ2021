@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{bfaee1d4-19cc-4465-8877-66f3276da370}">
+		<property name="name">
+			<value>Vol_PickUpObject</value>
+		</property>
+		<relationship name="folder">
+			<destination>{db2bf610-c818-4804-9e70-806c14937cf4}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{37a88a32-c78c-4f78-b84a-324fa57582c1}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{37a88a32-c78c-4f78-b84a-324fa57582c1}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>3</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
