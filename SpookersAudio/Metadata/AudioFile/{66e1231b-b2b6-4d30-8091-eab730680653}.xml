@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{09eca327-df68-4ec9-b235-96843c3383b2}">
+	<object class="AudioFile" id="{66e1231b-b2b6-4d30-8091-eab730680653}">
 		<property name="assetPath">
-			<value>SpookyGameJamAUDIOSFX/UI/UI_SoundPack13_Scroll_version05 - Trimmed.wav</value>
+			<value>SpookyGameJamAUDIOSFX/173_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close - Trimmed.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>1.375</value>
+			<value>0.34765625</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{27fdbabf-058e-4bf8-842a-d3836c95b753}</destination>

@@ -25,17 +25,21 @@ public class AudioManager : MonoBehaviour
     FMOD.Studio.EventInstance countdown;
     public string countdownEventPath = "event:/SFX/Clock";
 
+    FMOD.Studio.EventInstance humanFootstep;
     public string humanFootstepPath = "";
     
+    FMOD.Studio.EventInstance ghostFootstep;
     public string ghostFootstepPath = "";
     
     FMOD.Studio.EventInstance pickupItem;
     public string pickupItemPath = "";
     
+    FMOD.Studio.EventInstance putDownItem;
     public string putDownPath = "";
 
     public string humanFindItemPath = "";
     
+    FMOD.Studio.EventInstance pingItem;
     public string pingItemPath = "";
     
     public string uiButtonClickPath = "";
@@ -56,6 +60,17 @@ public class AudioManager : MonoBehaviour
 
         pickupItem = FMODUnity.RuntimeManager.CreateInstance(pickupItemPath);
 
+<<<<<<< HEAD:SpookersGGJ/Assets/Scripts/Audio/AudioManager.cs
+=======
+        ghostFootstep = FMODUnity.RuntimeManager.CreateInstance(ghostFootstepPath);
+
+        putDownItem = FMODUnity.RuntimeManager.CreateInstance(putDownPath);
+
+        pingItem = FMODUnity.RuntimeManager.CreateInstance(pingItemPath);
+
+        humanFootstep = FMODUnity.RuntimeManager.CreateInstance(humanFootstepPath);
+        
+>>>>>>> feature/AudioManager:SpookersGGJ/Assets/Scripts/AudioManager.cs
     }
     
     // Human footstep
@@ -71,7 +86,10 @@ public class AudioManager : MonoBehaviour
         }
         
         if(debugMessages) Debug.Log("Playing audio path: " + humanFootstepPath);
-        FMODUnity.RuntimeManager.PlayOneShotAttached(humanFootstepPath, playerObj);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(humanFootstepPath, playerObj);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(humanFootstep, transform, GetComponent<Rigidbody>());
+        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("HumanFootstepMaterial", FootstepMaterial);
+        humanFootstep.start();
     }
     
     // Ghost footstep
@@ -86,12 +104,15 @@ public class AudioManager : MonoBehaviour
             if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from {player.name}");
         }
         if(debugMessages) Debug.Log("Playing audio path: " + ghostFootstepPath);
-        FMODUnity.RuntimeManager.PlayOneShotAttached(ghostFootstepPath, playerObj);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(ghostFootstepPath, playerObj);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(ghostFootstep, transform, GetComponent<Rigidbody>());
+        ghostFootstep.start();
     }
 
     // Pickup item
     public void PlayPickupItem(GameObject player = null)
     {
+<<<<<<< HEAD:SpookersGGJ/Assets/Scripts/Audio/AudioManager.cs
         if (player == playerObj)
         {
             if(debugMessages) Debug.Log($"Playing audio path: {pickupItemPath} from local player");
@@ -102,6 +123,11 @@ public class AudioManager : MonoBehaviour
         }
         
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickupItem, player.transform, player.GetComponent<Rigidbody>());
+=======
+        if(debugMessages) Debug.Log("Playing audio path: " + pickupItemPath);
+        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Vol_PickUpObject", audioFilterState, false);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickupItem, transform, GetComponent<Rigidbody>());
+>>>>>>> feature/AudioManager:SpookersGGJ/Assets/Scripts/AudioManager.cs
         pickupItem.start();
         pickupItem.release();
     }
@@ -133,7 +159,10 @@ public class AudioManager : MonoBehaviour
     public void PlayPutDownItem()
     {
         if(debugMessages) Debug.Log("Playing audio path: " + putDownPath);
-        FMODUnity.RuntimeManager.PlayOneShotAttached(putDownPath, playerObj);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(putDownPath, playerObj);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(putDownItem, transform, GetComponent<Rigidbody>());
+        putDownItem.start();
+        putDownItem.release();
     }
 
     // Human find object
@@ -147,7 +176,10 @@ public class AudioManager : MonoBehaviour
     public void PlayPingItem()
     {
         if(debugMessages) Debug.Log("Playing audio path: " + pingItemPath);
-        FMODUnity.RuntimeManager.PlayOneShotAttached(pingItemPath, playerObj);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(pingItemPath, playerObj);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(pingItem, transform, GetComponent<Rigidbody>());
+        pingItem.start();
+        pingItem.release();
     }
 
     // UI button click
@@ -190,7 +222,11 @@ public class AudioManager : MonoBehaviour
     // Countdown
     public void CountdownActive(bool play = true)
     {
-        if (play) countdown.start();
+        if (play) 
+        {
+            //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Countdown", clockTime);
+            countdown.start();
+        }
         else countdown.stop(STOP_MODE.IMMEDIATE);
     }
     
